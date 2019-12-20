@@ -25,6 +25,7 @@ class login extends Component {
       errors: {}
     };
   }
+  //loading set true while submit handler and axios fetch data
   handleSubmit = event => {
     event.preventDefault();
     this.setState({
@@ -37,6 +38,7 @@ class login extends Component {
     axios
       .post("/login", userData)
       .then(result => {
+        localStorage.setItem("FBIdToken",  `Bearer $(result.data.token`);
         console.log(result.data);
         this.setState({
           loading: false
@@ -106,9 +108,10 @@ class login extends Component {
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={loading}
             >
               LOGIN
-              {loading && <CircularProgress className={classes.progress} color="secondary" />}
+              {loading && <CircularProgress size={33} className={classes.progress} color="primary" />}
             </Button>
             <br />
             <small>

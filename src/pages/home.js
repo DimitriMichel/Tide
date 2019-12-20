@@ -4,7 +4,7 @@ import axios from "axios";
 import Wave from "../components/Wave";
 class home extends Component {
   state = {
-    screams: null
+    waves: null
   };
   componentDidMount() {
     axios
