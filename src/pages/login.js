@@ -35,24 +35,7 @@ class login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    axios
-      .post("/login", userData)
-      .then(result => {
-        localStorage.setItem("FBIdToken",  `Bearer $(result.data.token`);
-        console.log(result.data);
-        this.setState({
-          loading: false
-        });
-        this.props.history.push("/");
-      })
-      .catch(err => {
-        console.log(err.response.data);
-        this.setState({
-          errors: err.response.data,
-          loading: false
-        });
-        console.log(this.state.errors.general);
-      });
+
   };
 
   handleChange = event => {

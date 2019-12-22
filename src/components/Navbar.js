@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import AssignmentRoundedIcon from "@material-ui/icons/AssignmentRounded";
+import PropTypes from "prop-types";
 
 class Navbar extends Component {
   render() {
@@ -45,5 +46,8 @@ class Navbar extends Component {
     );
   }
 }
+Navbar.propTypes = {
+  authenticated: PropTypes.bool.isRequired
+};
 
 export default Navbar;
