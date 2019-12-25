@@ -69,7 +69,7 @@ class signup extends Component {
             alt="App Icon"
           />
 
-          <form noValidate onSubmit={this.handleSubmit}>
+          <form noValidate onSubmit={this.handleSubmit} className={classes.formContainer}>
             <TextField
               fullWidth
               id="email"
@@ -144,9 +144,11 @@ class signup extends Component {
               )}
             </Button>
             <br />
-            <small>
+            <div className={classes.formLink}>
+            <small >
               <Link to="/login">Already have an account?</Link>
             </small>
+            </div>
           </form>
         </Grid>
         <Grid item sm />
