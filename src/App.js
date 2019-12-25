@@ -5,10 +5,14 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import themeConfig from "./util/theme";
 import jwtDecode from "jwt-decode";
+import axios from "axios";
 
 //REDUX
 import { Provider } from "react-redux";
-import store from "./redux/store"
+import store from "./redux/store";
+import { SET_AUTHENTICATED } from "./redux/types";
+import { logoutUser, getUserData } from "./redux/actions/userActions";
+
 //PAGES
 import home from "./pages/home";
 import login from "./pages/login";
@@ -27,12 +31,12 @@ if (token) {
   console.log(decodedToken);
   // Set Token Expiry Window
   if (decodedToken.exp * 1001 < Date.now()) {
+    store.dispatch(logoutUser());
     window.location.href = "/login";
-    authenticated = false;
-    console.log(authenticated);
   } else {
-    authenticated = true;
-    console.log(authenticated);
+    store.dispatch({ type: SET_AUTHENTICATED });
+    axios.default.headers.common["Authorization"] = token;
+    store.dispatch(getUserData());
   }
 }
 class App extends Component {
@@ -51,13 +55,11 @@ class App extends Component {
                 <AuthRoute
                   exact
                   path="/login"
-                  authenticated={authenticated}
                   component={login}
                 />
                 <AuthRoute
                   exact
                   path="/signup"
-                  authenticated={authenticated}
                   component={signup}
                 />
               </Switch>

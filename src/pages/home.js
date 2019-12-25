@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
+import news from "../API/news";
 import Wave from "../components/Wave";
 class home extends Component {
   state = {
@@ -16,6 +17,14 @@ class home extends Component {
         });
       })
       .catch(err => console.log(err));
+    news.get("/v2/top-headlines", {
+      params: {
+        country: "us"
+      }
+    })
+        .then(response =>{
+          console.log(response)
+        })
   }
 
   render() {
