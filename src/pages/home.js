@@ -43,7 +43,14 @@ class home extends Component {
           </Grid>
 
             <Grid item sm={8} xs={12}>
-              <div >
+              <div style={{
+                  padding: 10,
+                  boxShadow: "none !important",
+                  borderStyle: "solid",
+                  borderWidth: "2px",
+                  borderColor: "#E6ECF0",
+                  borderRadius: "4px"
+              }}>
               {recentWaves}
               </div>
             </Grid>

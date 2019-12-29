@@ -50,7 +50,11 @@ export default {
       paddingBottom: "10px"
     },
     paper: {
-      padding: 20
+      padding: 10,
+      boxShadow: "none !important",
+      borderStyle: "solid",
+      borderWidth: "2px",
+      borderColor: "#E6ECF0"
     },
     profileAvatar: {
       textAlign: "center",
@@ -59,6 +63,8 @@ export default {
     },
     profile: {
       "& .image-wrapper": {
+        width: 80,
+        height: 80,
         textAlign: "center",
         position: "relative",
         "& button": {
@@ -92,8 +98,10 @@ export default {
     },
     buttons: {
       textAlign: "center",
+      boxShadow: "none !important",
       "& a": {
-        margin: "20px 10px"
+        margin: "20px 10px",
+        boxShadow: "none !important"
       }
     }
   }

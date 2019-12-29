@@ -26,6 +26,9 @@ const styles = {
     width: 80,
     height: 80,
   }
+
+
+
 };
 class Wave extends Component {
   render() {

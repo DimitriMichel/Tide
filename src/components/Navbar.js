@@ -17,27 +17,27 @@ class Navbar extends Component {
         style={{
           background: "#FFF",
           boxShadow: "none",
-          borderBottomColor: "#0096D6",
-          borderBottom: "2px solid DeepSkyBlue",
+          borderBottomColor: "#E6ECF0",
+          borderBottom: "2px solid #E6ECF0",
           borderRadius: "15px 15px 0 0"
         }}
       >
         <Toolbar>
           <span className="parent-span">
             <Button component={Link} to="/login">
-              <ExitToAppRoundedIcon style={{ paddingRight: 2 }} />
+              <ExitToAppRoundedIcon style={{ paddingRight: 2, color:"#043F66" }} />
               Login
             </Button>
           </span>
             <span className="parent-span">
             <Button component={Link} to="/">
-              <HomeRoundedIcon style={{ paddingRight: 2 }} />
+              <HomeRoundedIcon style={{ paddingRight: 2, color:"#043F66" }} />
               Home
             </Button>
             </span>
             <span className="parent-span">
             <Button component={Link} to="/signup">
-              <AssignmentRoundedIcon style={{ paddingRight: 2 }} />
+              <AssignmentRoundedIcon style={{ paddingRight: 2, color:"#043F66" }} />
               Sign Up
             </Button>
             </span>
