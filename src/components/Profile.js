@@ -1,110 +1,145 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import Link from "react-router-dom/modules/Link";
+import Link from "react-router-dom/Link";
+import dayjs from "dayjs";
+import Avatar from "@material-ui/core/Avatar";
 
 //MATERIAL UI
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
-import MuiLink from "@material-ui/core/Link"
+import MuiLink from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import LocationOn from "@material-ui/icons/LocationOn"
-import LinkIcon from "@material-ui/icons/Link"
-import CalendarToday from "@material-ui/icons/CalendarToday"
+import LocationOn from "@material-ui/icons/LocationOn";
+import LinkIcon from "@material-ui/icons/Link";
+import CalendarToday from "@material-ui/icons/CalendarToday";
+import IconButton from "@material-ui/core/IconButton";
+import EditIcon from "@material-ui/icons/Edit";
 
 //REDUX
 import { connect } from "react-redux";
 
-
-const styles = {
-  paper: {
-    padding: 20
-  },
-  profile: {
-    '& .image-wrapper': {
-      textAlign: 'center',
-      position: 'relative',
-      '& button': {
-        position: 'absolute',
-        top: '80%',
-        left: '70%'
-      }
-    },
-    '& .profile-image': {
-      width: 200,
-      height: 200,
-      objectFit: 'cover',
-      maxWidth: '100%',
-      borderRadius: '50%'
-    },
-    '& .profile-details': {
-      textAlign: 'center',
-      '& span, svg': {
-        verticalAlign: 'middle'
-      },
-      '& a': {
-        color: theme.palette.primary.main
-      }
-    },
-    '& hr': {
-      border: 'none',
-      margin: '0 0 10px 0'
-    },
-    '& svg.button': {
-      '&:hover': {
-        cursor: 'pointer'
-      }
-    }
-  },
-  buttons: {
-    textAlign: 'center',
-    '& a': {
-      margin: '20px 10px'
-    }
-  }
-};
+const styles = theme => ({
+  ...theme.spreadTheme
+});
 
 class Profile extends Component {
+  //(for event.target.files) files when selected are in an array. input only needs one so files[0] is used.
+  handleImageChange = event => {
+    const image = event.target.files[0];
+  };
+  handleChangePicture = () => {
+    const fileInput = document.getElementById("profileImageUpload");
+    fileInput.click();
+  };
   render() {
     const {
       classes,
       user: {
-        credentials: { handle, createdAt, imageUrl, website, bio },
-        loading
+        credentials: { handle, createdAt, imageUrl, website, bio, location },
+        loading,
+        authenticated
       }
     } = this.props;
-    let profileMarkup = !loading ? (authenticated ? (
+    let profileMarkup = !loading ? (
+      // eslint-disable-next-line no-undef
+      authenticated ? (
         <Paper className={classes.paper}>
           <div className={classes.profile}>
-            <div className="profile-image">
-              <img src={imageUrl} alt="profile-image"/>
-            </div>
-            <hr/>
+            <input
+                type="file"
+                id="profileImageUpload"
+                onChange={this.handleImageChange}
+                hidden="hidden"
+            />
+            <IconButton
+                onClick={this.handleChangePicture}
+                className="button"
+                style={{
+                  left: "93%",
+                  padding: 5
+                }}
+            >
+              <EditIcon color="primary" />
+            </IconButton>
+            <br/>
+            <Avatar
+              className={classes.avatar}
+              src={imageUrl}
+              alt="profile"
+              component={Link}
+              style={{ marginLeft: "auto", marginRight: "auto" }}
+            />
+            <br />
             <div className="profile-details">
-              <MuiLink component={Link} to={`users/${handle}`} color="primary" variant="h5">
+              <MuiLink
+                component={Link}
+                to={`users/${handle}`}
+                color="primary"
+                variant="h5"
+              >
                 @{handle}
               </MuiLink>
-              <hr/>
-              {bio && <Typography variant="body2">{bio}}</Typography>}
-              <hr/>
+              <br />
+              {bio && (
+                <Typography variant="body2">
+                  {bio} style={{ whiteSpace: "pre-line" }}
+                </Typography>
+              )}
+              <br />
               {location && (
-                  <Fragment>
-                    <LocationOn color="primary"/> <span>{location}</span>
-                  </Fragment>
+                <Fragment style={{ whiteSpace: "pre-line" }}>
+                  <LocationOn
+                    color="primary"
+                    style={{ whiteSpace: "pre-line" }}
+                  />{" "}
+                  <span>{location}</span>
+                </Fragment>
               )}
+              <br />
               {website && (
-                  <Fragment>
-                    <LinkIcon color="primary"/>
-                    <a href={website} target="_blank" rel="noopener noreferrer">
-                      {" "}{website}
-                    </a>
-                  </Fragment>
+                <Fragment>
+                  <LinkIcon color="primary" />
+                  <a href={website} target="_blank" rel="noopener noreferrer">
+                    {" "}
+                    {website}
+                  </a>
+                </Fragment>
               )}
-              <CalendarToday color="primary"/>{" "}
+              <br />
+              <CalendarToday color="primary" />{" "}
+              <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
             </div>
           </div>
         </Paper>
-    ): ()) : (<p>Loading...</p>);
+      ) : (
+        <Paper className={classes.paper}>
+          <Typography variant="body2" align="center">
+            (Profile not found! Please log in again.)
+          </Typography>
+          <div className={classes.buttons}>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/login"
+            >
+              Login
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/signup"
+            >
+              Signup
+            </Button>
+          </div>
+        </Paper>
+      )
+    ) : (
+      <p>Loading...</p>
+    );
     return profileMarkup;
   }
 }

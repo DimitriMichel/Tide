@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import news from "../API/news";
 import Wave from "../components/Wave";
+import Profile from "../components/Profile";
 class home extends Component {
   state = {
     waves: null
@@ -38,7 +39,7 @@ class home extends Component {
       <div style={{ padding: "32px" }}>
         <Grid container spacing={3}>
           <Grid item sm={4} xs={12}>
-            <p>Profile.</p>
+              <Profile />
           </Grid>
 
             <Grid item sm={8} xs={12}>
