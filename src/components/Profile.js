@@ -16,26 +16,32 @@ import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
-
+import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
+import EditDetails from "../components/EditDetails";
 //REDUX
 import { connect } from "react-redux";
-import {logoutUser, uploadImage} from "../redux/actions/userActions";
+import { logoutUser, uploadImage } from "../redux/actions/userActions";
 
 const styles = theme => ({
   ...theme.spreadTheme
 });
 
 class Profile extends Component {
-  //(for event.target.files) files when selected are in an array. input only needs one so files[0] is used.
+  //(event.target.files) files when selected are in an array. input only needs one so files[0] is used.
   handleImageChange = event => {
     const image = event.target.files[0];
     const formData = new FormData();
     formData.append("image", image, image.name);
     this.props.uploadImage(formData);
   };
+
   handleChangePicture = () => {
     const fileInput = document.getElementById("profileImageUpload");
     fileInput.click();
+  };
+
+  handleLogout = () => {
+    this.props.logoutUser();
   };
   render() {
     const {
@@ -59,12 +65,12 @@ class Profile extends Component {
             />
             <Tooltip title="Change Profile Picture" placement="bottom">
               <IconButton
-                  onClick={this.handleChangePicture}
-                  className="button"
-                  style={{
-                    left: "92%",
-                    padding: 5
-                  }}
+                onClick={this.handleChangePicture}
+                className="button"
+                style={{
+                  left: "92%",
+                  padding: 5
+                }}
               >
                 <EditIcon color="primary" />
               </IconButton>
@@ -94,35 +100,49 @@ class Profile extends Component {
                 </Typography>
               )}
               <br />
-              <div style={{ backgroundColor: "#E6ECF0", padding: "5px", borderRadius: "4px"}}>
-              {location && (
-                <Fragment style={{ whiteSpace: "pre-line" }}>
-                  <LocationOn
-                    color="primary"
-                    style={{ whiteSpace: "pre-line" }}
-                  />{" "}
-                  <span>{location}</span>
-                </Fragment>
-              )}
-              <br />
-              {website && (
-                <Fragment>
-                  <LinkIcon color="primary" />
-                  <a href={website} target="_blank" rel="noopener noreferrer">
-                    {" "}
-                    {website}
-                  </a>
-                </Fragment>
-              )}
-              <br />
-              <CalendarToday color="primary" />{" "}
-              <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
+              <div
+                style={{
+                  backgroundColor: "#E6ECF0",
+                  padding: "5px",
+                  borderRadius: "4px"
+                }}
+              >
+                {location && (
+                  <Fragment style={{ whiteSpace: "pre-line" }}>
+                    <LocationOn
+                      color="primary"
+                      style={{ whiteSpace: "pre-line" }}
+                    />{" "}
+                    <span>{location}</span>
+                  </Fragment>
+                )}
+                <br />
+                {website && (
+                  <Fragment>
+                    <LinkIcon color="primary" />
+                    <a href={website} target="_blank" rel="noopener noreferrer">
+                      {" "}
+                      {website}
+                    </a>
+                  </Fragment>
+                )}
+                <br />
+                <CalendarToday color="primary" />{" "}
+                <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
+              </div>
+              <div className="profile-buttons-container">
+                <Tooltip title="Logout" placement="top">
+                  <IconButton onClick={this.handleLogout}>
+                    <KeyboardReturn color="primary" />
+                  </IconButton>
+                </Tooltip>
+                <EditDetails />
               </div>
             </div>
           </div>
         </Paper>
       ) : (
-        <Paper className={classes.paper} >
+        <Paper className={classes.paper}>
           <Typography variant="body2" align="center">
             (Profile not found! Please log in again.)
           </Typography>
@@ -152,10 +172,12 @@ class Profile extends Component {
     return profileMarkup;
   }
 }
+
+// Connect to Redux Store For User State (called every time the store state changes.)
 const mapStateToProps = state => ({
   user: state.user
 });
-const mapActionsToProps = {logoutUser, uploadImage};
+const mapActionsToProps = { logoutUser, uploadImage };
 Profile.protoTypes = {
   user: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
@@ -163,4 +185,7 @@ Profile.protoTypes = {
   uploadImage: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(Profile));
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(withStyles(styles)(Profile));

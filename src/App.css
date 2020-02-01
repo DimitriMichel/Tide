@@ -40,3 +40,17 @@ a:hover {
 .parent-span:hover svg {
   fill: #00BEFF !important;
 }
+
+.MuiCardHeader-root {
+  background-color: #E6ECF0;
+}
+
+.MuiCardHeader-avatar {
+  margin: 0 !important;
+}
+
+.profile-buttons-container {
+  margin-top: 15px;
+  background-color: #E6ECF0;
+  border-radius: 4px;
+}
