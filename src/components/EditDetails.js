@@ -107,7 +107,7 @@ class EditDetails extends Component {
                 label="Website"
                 placeholder="Personal Site"
                 className={classes.textField}
-                value={this.state.bio}
+                value={this.state.website}
                 onChange={this.handleChange}
                 fullWidth
               />
@@ -117,7 +117,7 @@ class EditDetails extends Component {
                 label="Location"
                 placeholder="Where you live"
                 className={classes.textField}
-                value={this.state.bio}
+                value={this.state.location}
                 onChange={this.handleChange}
                 fullWidth
               />
