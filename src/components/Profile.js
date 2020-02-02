@@ -94,11 +94,7 @@ class Profile extends Component {
                 @{handle}
               </MuiLink>
               <br />
-              {bio && (
-                <Typography variant="body2">
-                  {bio} style={{ whiteSpace: "pre-line" }}
-                </Typography>
-              )}
+              {bio && <Typography variant="body2">{bio}</Typography>}
               <br />
               <div
                 style={{

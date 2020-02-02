@@ -45,7 +45,7 @@ class home extends Component {
             <Grid item sm={8} xs={12}>
               <div style={{
                   padding: 10,
-                  boxShadow: "none !important",
+                  boxShadow: "none",
                   borderStyle: "solid",
                   borderWidth: "2px",
                   borderColor: "#E6ECF0",
