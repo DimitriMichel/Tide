@@ -27,8 +27,6 @@ const styles = {
     height: 80,
   }
 
-
-
 };
 class Wave extends Component {
   render() {

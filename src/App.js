@@ -44,24 +44,13 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
-          <div
-            className="App"
-            style={{ backgroundColor: "#fff", borderRadius: "5px" }}
-          >
+          <div className="App">
             <Router>
               <Navbar />
               <Switch>
                 <Route exact path="/" component={home} />
-                <AuthRoute
-                  exact
-                  path="/login"
-                  component={login}
-                />
-                <AuthRoute
-                  exact
-                  path="/signup"
-                  component={signup}
-                />
+                <AuthRoute exact path="/login" component={login} />
+                <AuthRoute exact path="/signup" component={signup} />
               </Switch>
             </Router>
           </div>

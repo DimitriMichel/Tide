@@ -128,7 +128,7 @@ class Profile extends Component {
               </div>
               <div className="profile-buttons-container">
                 <Tooltip title="Logout" placement="top">
-                  <IconButton onClick={this.handleLogout}>
+                  <IconButton onClick={this.handleLogout} color="primary">
                     <KeyboardReturn color="primary" />
                   </IconButton>
                 </Tooltip>

@@ -29,7 +29,8 @@ class EditDetails extends Component {
     location: "",
     open: false
   };
-
+  // mapping user details to state will insure that upon edit in the text box of the respective details
+  // the current bio, website, or location will appear.
   mapUserDetailsToState = credentials => {
     this.setState({
       bio: credentials.bio ? credentials.bio : "",
@@ -76,7 +77,7 @@ class EditDetails extends Component {
     return (
       <Fragment>
         <Tooltip title="Edit Details" placement="top">
-          <IconButton onClick={this.handleOpen} className={classes.button}>
+          <IconButton onClick={this.handleOpen} className={classes.button} color="primary">
             <EditIcon />
           </IconButton>
         </Tooltip>
@@ -95,7 +96,7 @@ class EditDetails extends Component {
                 label="bio"
                 multiline
                 rows="3"
-                placeholder="A short bio about yourself"
+                placeholder="Enter a short bio."
                 className={classes.textField}
                 value={this.state.bio}
                 onChange={this.handleChange}

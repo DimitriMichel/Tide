@@ -8,7 +8,7 @@ export default {
     },
     secondary: {
       light: "#ff80ab",
-      main: "#ff4081",
+      main: "#043F66",
       dark: "#f50057",
       contrastText: "fff"
     }
