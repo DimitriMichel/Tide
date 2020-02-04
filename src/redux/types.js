@@ -12,5 +12,7 @@ export const LOADING_DATA = "LOADING_DATA";
 export const STOP_LOADING_UI = "STOP_LOADING_UI";
 
 //DATA REDUCER TYPES
-
-
+export const SET_WAVES = "SET_WAVES";
+export const SET_WAVE = "SET_WAVE";
+export const LIKE_WAVE = "LIKE_WAVE";
+export const UNLIKE_WAVE = "UNLIKE_WAVE";
