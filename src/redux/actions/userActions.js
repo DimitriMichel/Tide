@@ -9,9 +9,9 @@ import {
 import axios from "axios";
 
 const setAuthorizationHeader = token => {
-  const FBIdToken = `Bearer ${token}`;
-  localStorage.setItem("FBIdToken", `Bearer $(result.data.token`);
-  axios.defaults.headers.common["Authorization"] = FBIdToken;
+    const FBIdToken = `Bearer ${token}`;
+    localStorage.setItem("FBIdToken", FBIdToken);
+    axios.defaults.headers.common["Authorization"] = FBIdToken;
 };
 
 export const loginUser = (userData, history) => dispatch => {

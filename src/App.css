@@ -68,7 +68,9 @@ a:hover {
   background-color: #e6ecf0;
   border-radius: 4px;
 }
-
+.btn {
+  color: white;
+}
 body {
   background: white;
 }

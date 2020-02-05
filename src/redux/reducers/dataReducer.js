@@ -28,5 +28,7 @@ export default function(state = initialState, action) {
       return {
         ...state
       };
+    default:
+      return state;
   }
 }

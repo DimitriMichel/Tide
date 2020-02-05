@@ -72,7 +72,7 @@ class Profile extends Component {
                   padding: 5
                 }}
               >
-                <EditIcon color="primary" />
+                <EditIcon color="secondary" />
               </IconButton>
             </Tooltip>
             <br />
@@ -88,7 +88,7 @@ class Profile extends Component {
               <MuiLink
                 component={Link}
                 to={`users/${handle}`}
-                color="primary"
+                color="secondary"
                 variant="h5"
               >
                 @{handle}
@@ -106,7 +106,7 @@ class Profile extends Component {
                 {location && (
                   <Fragment style={{ whiteSpace: "pre-line" }}>
                     <LocationOn
-                      color="primary"
+                      color="secondary"
                       style={{ whiteSpace: "pre-line" }}
                     />{" "}
                     <span>{location}</span>
@@ -115,7 +115,7 @@ class Profile extends Component {
                 <br />
                 {website && (
                   <Fragment>
-                    <LinkIcon color="primary" />
+                    <LinkIcon color="secondary" />
                     <a href={website} target="_blank" rel="noopener noreferrer">
                       {" "}
                       {website}
@@ -123,13 +123,13 @@ class Profile extends Component {
                   </Fragment>
                 )}
                 <br />
-                <CalendarToday color="primary" />{" "}
+                <CalendarToday color="secondary" />{" "}
                 <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
               </div>
               <div className="profile-buttons-container">
                 <Tooltip title="Logout" placement="top">
-                  <IconButton onClick={this.handleLogout} color="primary">
-                    <KeyboardReturn color="primary" />
+                  <IconButton onClick={this.handleLogout} color="secondary">
+                    <KeyboardReturn color="secondary" />
                   </IconButton>
                 </Tooltip>
                 <EditDetails />
@@ -145,17 +145,19 @@ class Profile extends Component {
           <div className={classes.buttons}>
             <Button
               variant="contained"
-              color="primary"
+              color="secondary"
               component={Link}
               to="/login"
+              className={classes.button}
             >
               Login
             </Button>
             <Button
               variant="contained"
-              color="primary"
+              color="secondary"
               component={Link}
               to="/signup"
+              className={classes.button}
             >
               Signup
             </Button>

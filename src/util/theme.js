@@ -2,14 +2,14 @@ export default {
   palette: {
     primary: {
       light: "#87E1FF",
-      main: "#00BFFE",
+      main: "#f50057",
       dark: "#00A2D8",
       contrastText: "#fff"
     },
     secondary: {
       light: "#ff80ab",
       main: "#043F66",
-      dark: "#f50057",
+      dark: "#00BDFF",
       contrastText: "fff"
     }
   },
@@ -32,7 +32,8 @@ export default {
     button: {
       margin: "10px",
       boxShadow: "none !important",
-      position: "relative"
+      position: "relative",
+      color: "white"
     },
     credentialError: {
       color: "red",

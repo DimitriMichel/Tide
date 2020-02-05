@@ -2,7 +2,9 @@ import {
   SET_USER,
   SET_AUTHENTICATED,
   SET_UNAUTHENTICATED,
-    LOADING_USER
+  LOADING_USER,
+  LIKE_WAVE,
+  UNLIKE_WAVE
 } from "../types";
 
 const initialState = {
@@ -26,7 +28,7 @@ export default function(state = initialState, action) {
     case SET_USER:
       return {
         authenticated: true,
-        loading:false,
+        loading: false,
         ...action.payload
       };
     case LOADING_USER:
@@ -34,6 +36,23 @@ export default function(state = initialState, action) {
         ...state,
         loading: true
       };
+    case LIKE_WAVE:
+      return {
+        ...state,
+        likes: [
+          state.likes,
+          {
+            userHandle: state.credentials.handle,
+            waveID: action.payload.waveID
+          }
+        ]
+      };
+    case UNLIKE_WAVE:
+      return {
+        ...state,
+        likes: state.likes.filter(like => like.waveID === action.payload.waveID)
+      };
+
     default:
       return state;
   }
