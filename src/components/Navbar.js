@@ -24,14 +24,14 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-              <AppButton tip="Make a Wave">
-                <AddIcon color="secondary" />
-              </AppButton>
               <Link to="/">
                 <AppButton tip="Home">
                   <HomeIcon color="secondary" />
                 </AppButton>
               </Link>
+              <AppButton tip="Make a Wave">
+                <AddIcon color="secondary" />
+              </AppButton>
               <AppButton tip="Notifications">
                 <Notifications color="secondary" />
               </AppButton>
