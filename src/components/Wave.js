@@ -26,12 +26,12 @@ const styles = {
   },
   image: {},
   content: {
-    padding: 25,
+    padding: 15,
     objectFit: "cover"
   },
   avatar: {
-    width: 80,
-    height: 80
+    width: 40,
+    height: 40
   }
 };
 class Wave extends Component {
@@ -88,33 +88,50 @@ class Wave extends Component {
     return (
       <div>
         <Card className={classes.card}>
-          <CardHeader
-            avatar={
+          <CardContent className={classes.details}>
+            <div style={{ display: "block" }}>
               <Avatar
-                className={classes.avatar}
+                className="wave-avatar"
                 src={userImage}
                 alt={userHandle}
                 component={Link}
                 to={`/users/${userHandle}`}
+                style={{ float: "left" }}
               >
-                G
+                {" "}
               </Avatar>
-            }
-          />
-          <CardContent className={classes.details}>
-            <Typography component={Link} to={`/users/${userHandle}`}>
-              {userHandle}
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-              {dayjs(createdAt).fromNow()}
-            </Typography>
-            <Typography variant="body1">{body}</Typography>
-            {likeButton}
-            <span>{likeCount} Likes</span>
-            <AppButton tip="Comments">
-              <ChatIcon color="secondary" />
-            </AppButton>
-            <span>{commentCount} Comments</span>
+              <div className="avatar-container">
+                <Typography
+                  component={Link}
+                  to={`/users/${userHandle}`}
+                  style={{ display: "inline !important" }}
+                >
+                  {userHandle}
+                </Typography>
+              </div>
+            </div>
+            <div className="avatar-container">
+              <Typography variant="body2" color="textSecondary">
+                {dayjs(createdAt).fromNow()}
+              </Typography>
+            </div>
+            <div className="wave-container">
+              <div className="wave-body">
+                <Typography variant="body1">{body}</Typography>
+              </div>
+              <div className="like-comment-icon">
+                {likeButton}
+                <span>
+                  {likeCount} <span className="like-comment">Likes</span>
+                </span>
+                <AppButton tip="Comments">
+                  <ChatIcon color="secondary" />
+                </AppButton>
+                <span>
+                  {commentCount} <span className="like-comment">Comments</span>
+                </span>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>

@@ -62,7 +62,9 @@ a:hover {
 .MuiCardHeader-avatar {
   margin: 0 !important;
 }
-
+.MuiCardContent-root {
+  padding: 16px 16px 0 16px !important;
+}
 .profile-buttons-container {
   margin-top: 15px;
   background-color: #e6ecf0;
@@ -73,4 +75,51 @@ a:hover {
 }
 body {
   background: white;
+}
+.wave-container {
+  padding: 10px 0 0 34px;
+}
+
+.wave-body {
+  padding: 0 0 0 12px;
+}
+.wave-avatar {
+  width: 100px;
+  height: 100px;
+  display: inline;
+}
+.avatar-container {
+  padding-left: 50px;
+}
+.container {
+  padding: 14px;
+}
+@media only screen and (max-width: 600px) {
+  .like-comment {
+    display: none;
+  }
+  .wave-container {
+    padding: 10px 0 10px 0;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+  .wave-body{
+    padding: 0 0 5px 0;
+  }
+  button.MuiButtonBase-root.MuiIconButton-root{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .MuiCardContent-root {
+    padding: 16px 16px 0 16px !important;
+    width: 100%;
+  }
+  .like-comment-icon {
+    padding: 5px 0 5px 0;
+    background-color: #E6ECF0;
+    border-radius: 4px;
+  }
+
 }

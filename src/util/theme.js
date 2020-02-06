@@ -18,8 +18,14 @@ export default {
       textAlign: "center"
     },
     avatar: {
-      width: 80,
-      height: 80
+      width: 100,
+      height: 100
+
+    },
+    waveAvatar:{
+      width: 100,
+      height: 100,
+      display: "inline",
     },
     image: {
       margin: "5px auto 5px auto",

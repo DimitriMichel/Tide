@@ -31,7 +31,7 @@ class home extends Component {
     );
 
     return (
-      <div style={{ padding: "32px" }}>
+      <div className="container">
         <Grid container spacing={3}>
           <Grid item sm={4} xs={12}>
             <Profile />
