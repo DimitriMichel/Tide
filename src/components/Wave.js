@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import relativeTime from "dayjs/plugin/relativeTime";
+import DeleteWave from "./DeleteWave";
 
 //REDUX
 import { connect } from "react-redux";
@@ -65,7 +66,10 @@ class Wave extends Component {
         likeCount,
         commentCount
       },
-      user: { authenticated }
+      user: {
+        authenticated,
+        credentials: { handle }
+      }
     } = this.props;
     const likeButton = !authenticated ? (
       //First: If User is not logged in icon will take to login page.
@@ -85,10 +89,15 @@ class Wave extends Component {
         <FavoriteBorder color="primary" />
       </AppButton>
     );
+    const deleteButton =
+      authenticated && userHandle === handle ? (
+        <DeleteWave waveID={waveID} />
+      ) : null;
     return (
       <div>
         <Card className={classes.card}>
-          <CardContent className={classes.details}>
+          <CardContent className={classes.details} style={{position: "relative"}}>
+            <div className="delete-button">{deleteButton}</div>
             <div style={{ display: "block" }}>
               <Avatar
                 className="wave-avatar"

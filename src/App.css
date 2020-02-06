@@ -92,8 +92,22 @@ body {
   padding-left: 50px;
 }
 .container {
-  padding: 14px;
+  padding: 16px 4px 4px 4px;
 }
+.MuiCardContent-root {
+  width: 100%;
+  padding-right: 0;
+}
+
+.MuiPaper-root.MuiPaper-elevation1.MuiCard-root.Wave-card-272.MuiPaper-rounded{
+  position: relative;
+}
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @media only screen and (max-width: 600px) {
   .like-comment {
     display: none;
@@ -101,8 +115,6 @@ body {
   .wave-container {
     padding: 10px 0 10px 0;
     text-align: center;
-    align-items: center;
-    align-content: center;
     width: 100%;
   }
   .wave-body {
@@ -127,5 +139,10 @@ body {
     align-items: center;
     alignment: center;
     margin: auto;
+  }
+  .delete-button {
+    position: absolute;
+    top: 5%;
+    right: 0;
   }
 }

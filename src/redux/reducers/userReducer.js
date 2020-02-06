@@ -40,7 +40,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         likes: [
-          state.likes,
+          ...state.likes,
           {
             userHandle: state.credentials.handle,
             waveID: action.payload.waveID
@@ -50,7 +50,7 @@ export default function(state = initialState, action) {
     case UNLIKE_WAVE:
       return {
         ...state,
-        likes: state.likes.filter(like => like.waveID === action.payload.waveID)
+        likes: state.likes.filter(like => like.waveID !== action.payload.waveID)
       };
 
     default:

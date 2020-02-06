@@ -16,3 +16,4 @@ export const SET_WAVES = "SET_WAVES";
 export const SET_WAVE = "SET_WAVE";
 export const LIKE_WAVE = "LIKE_WAVE";
 export const UNLIKE_WAVE = "UNLIKE_WAVE";
+export const DELETE_WAVE = "DELETE_WAVE";

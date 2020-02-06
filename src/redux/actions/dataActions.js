@@ -3,7 +3,8 @@ import {
   LIKE_WAVE,
   UNLIKE_WAVE,
   SET_WAVES,
-  SET_WAVE
+  SET_WAVE,
+  DELETE_WAVE
 } from "../types";
 import axios from "axios";
 
@@ -41,4 +42,12 @@ export const unlikeWave = waveID => dispatch => {
       dispatch({ type: UNLIKE_WAVE, payload: result.data });
     })
     .catch(err => console.log(err));
+};
+
+export const deleteWave = waveID => dispatch => {
+  axios.delete(`/wave/${waveID}`)
+      .then(() => {
+        dispatch({type: DELETE_WAVE, payload: waveID})
+            .catch(err =>console.log(err))
+      })
 };
