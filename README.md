@@ -2,7 +2,7 @@
 
 # Tide
 
-Social Media Created With:
+Social Media Application Created With:
 #### React
 #### Redux
 
