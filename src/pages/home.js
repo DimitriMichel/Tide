@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
-import axios from "axios";
-import news from "../API/news";
-import Wave from "../components/Wave";
-import Profile from "../components/Profile";
+import News from "../API/News";
+import Wave from "../components/Wave/Wave";
+import Profile from "../components/Profile/Profile";
 import { connect } from "react-redux";
 import { getWaves } from "../redux/actions/dataActions";
 import PropTypes from "prop-types";
@@ -11,7 +10,7 @@ import PropTypes from "prop-types";
 class home extends Component {
   componentDidMount() {
     this.props.getWaves();
-    news
+    News
       .get("/v2/top-headlines", {
         params: {
           country: "us"

@@ -2,8 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import AppButton from "../util/AppButton";
-
+import AppButton from "../../util/AppButton";
+import PostWave from "../Wave/PostWave";
 //MATERIAL UI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -14,7 +14,7 @@ import AssignmentRoundedIcon from "@material-ui/icons/AssignmentRounded";
 import AddIcon from "@material-ui/icons/Add";
 import HomeIcon from "@material-ui/icons/Home";
 import Notifications from "@material-ui/icons/Notifications";
-
+import RssFeedIcon from "@material-ui/icons/RssFeed";
 //REDUX
 class Navbar extends Component {
   render() {
@@ -29,12 +29,15 @@ class Navbar extends Component {
                   <HomeIcon color="secondary" />
                 </AppButton>
               </Link>
-              <AppButton tip="Make a Wave">
-                <AddIcon color="secondary" />
-              </AppButton>
+              <PostWave />
               <AppButton tip="Notifications">
                 <Notifications color="secondary" />
               </AppButton>
+              <Link to="/">
+                <AppButton tip="News">
+                  <RssFeedIcon color="secondary" />
+                </AppButton>
+              </Link>
             </Fragment>
           ) : (
             <Fragment>

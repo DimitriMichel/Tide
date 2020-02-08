@@ -1,4 +1,12 @@
-import { SET_WAVES, LIKE_WAVE, UNLIKE_WAVE, LOADING_DATA, DELETE_WAVE } from "../types";
+import {
+  SET_WAVES,
+  LIKE_WAVE,
+  UNLIKE_WAVE,
+  LOADING_DATA,
+  DELETE_WAVE,
+  POST_WAVE,
+  SET_WAVE
+} from "../types";
 
 const initialState = {
   waves: [],
@@ -19,22 +27,35 @@ export default function(state = initialState, action) {
         waves: action.payload,
         loading: false
       };
+    case SET_WAVE:
+      return {
+        ...state,
+        wave: action.payload
+      };
     case LIKE_WAVE:
     case UNLIKE_WAVE:
       let index = state.waves.findIndex(
         wave => wave.waveID === action.payload.waveID
       );
       state.waves[index] = action.payload;
+      if (state.wave.waveID === action.payload.waveID) {
+        state.wave = action.payload;
+      }
       return {
         ...state
       };
     case DELETE_WAVE:
-      index = state.wave.findIndex(
-          (scream) => scream.waveID === action.payload
+      let waveIndex = state.waves.findIndex(
+        wave => wave.waveID === action.payload
       );
-      state.wave.splice(index, 1);
+      state.waves.splice(waveIndex, 1);
       return {
         ...state
+      };
+    case POST_WAVE:
+      return {
+        ...state,
+        waves: [action.payload, ...state.waves]
       };
     default:
       return state;

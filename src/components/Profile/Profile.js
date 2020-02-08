@@ -17,10 +17,10 @@ import CalendarToday from "@material-ui/icons/CalendarToday";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
 import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
-import EditDetails from "../components/EditDetails";
+import EditDetails from "./EditDetails";
 //REDUX
 import { connect } from "react-redux";
-import { logoutUser, uploadImage } from "../redux/actions/userActions";
+import { logoutUser, uploadImage } from "../../redux/actions/userActions";
 
 const styles = theme => ({
   ...theme.spreadTheme
@@ -94,7 +94,7 @@ class Profile extends Component {
                 @{handle}
               </MuiLink>
               <br />
-              {bio && <Typography variant="body2">{bio}</Typography>}
+              {bio && <Typography variant="body2" className="bio">{bio}</Typography>}
               <br />
               <div
                 style={{

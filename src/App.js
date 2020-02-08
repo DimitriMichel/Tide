@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
@@ -19,7 +19,7 @@ import login from "./pages/login";
 import signup from "./pages/signup";
 
 //COMPONENTS
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Structure/Navbar";
 import AuthRoute from "./util/AuthRoute";
 
 const theme = createMuiTheme(themeConfig);
@@ -46,7 +46,9 @@ class App extends Component {
         <Provider store={store}>
           <div className="App">
             <Router>
+
               <Navbar />
+
               <Switch>
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />

@@ -1,8 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, " Helvetica Neue", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .App {
   background-color: #fff;
@@ -82,6 +81,7 @@ body {
 
 .wave-body {
   padding: 0 0 0 12px;
+  line-height: 1.5;
 }
 .wave-avatar {
   width: 100px;
@@ -99,7 +99,7 @@ body {
   padding-right: 0;
 }
 
-.MuiPaper-root.MuiPaper-elevation1.MuiCard-root.Wave-card-272.MuiPaper-rounded{
+.MuiPaper-root.MuiPaper-elevation1.MuiCard-root.Wave-card-272.MuiPaper-rounded {
   position: relative;
 }
 .delete-button {
@@ -107,18 +107,32 @@ body {
   top: 0;
   right: 0;
 }
+.bio {
+  padding-top: 10px;
+}
+.close-wave {
+  position: absolute;
+  left: 91%;
+  top: 6%;
+}
+.comment-user-details{
+  padding-left: 12px;
+}
 
+.MuiDialogContent-root.WaveDialog-dialogContent-311{
+  padding-bottom: 0;
+}
 @media only screen and (max-width: 600px) {
   .like-comment {
     display: none;
   }
   .wave-container {
     padding: 10px 0 10px 0;
-    text-align: center;
     width: 100%;
   }
   .wave-body {
-    padding: 0 0 5px 0;
+    padding: 0 10px 10px 10px;
+    line-height: 1.5;
   }
   button.MuiButtonBase-root.MuiIconButton-root {
     padding-top: 0;
@@ -130,6 +144,7 @@ body {
   }
   .like-comment-icon {
     padding: 5px 0 5px 0;
+    text-align: center;
     background-color: #e6ecf0;
     border-radius: 4px;
   }
@@ -144,5 +159,23 @@ body {
     position: absolute;
     top: 5%;
     right: 0;
+  }
+  .close-wave {
+    position: absolute;
+    left: 85%;
+    top: 5%;
+  }
+  .MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-2 {
+    width: 100%;
+    text-align: center;
+
+  }
+  .comment-handle{
+    width: 100%;
+    text-align: center;
+  }
+  .comment-user-details{
+    padding: 0;
+    text-align: center;
   }
 }

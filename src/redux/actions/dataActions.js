@@ -4,11 +4,17 @@ import {
   UNLIKE_WAVE,
   SET_WAVES,
   SET_WAVE,
-  DELETE_WAVE
+  DELETE_WAVE,
+  LOADING_UI,
+  POST_WAVE,
+  CLEAR_ERRORS,
+  SET_ERRORS,
+  STOP_LOADING_UI
 } from "../types";
+
 import axios from "axios";
 
-//GET all Waves from database
+//GET ALL WAVES
 export const getWaves = () => dispatch => {
   dispatch({ type: LOADING_DATA });
   axios
@@ -24,7 +30,7 @@ export const getWaves = () => dispatch => {
     });
 };
 
-//LIKE a Wave
+//LIKE WAVE
 export const likeWave = waveID => dispatch => {
   axios
     .get(`/wave/${waveID}/like`)
@@ -34,7 +40,7 @@ export const likeWave = waveID => dispatch => {
     .catch(err => console.log(err));
 };
 
-//UNLIKE a Wave
+//UNLIKE WAVE
 export const unlikeWave = waveID => dispatch => {
   axios
     .get(`/wave/${waveID}/unlike`)
@@ -43,11 +49,41 @@ export const unlikeWave = waveID => dispatch => {
     })
     .catch(err => console.log(err));
 };
+//POST WAVE
+export const postWave = newWave => dispatch => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .post("/wave", newWave)
+    .then(response => {
+      dispatch({ type: POST_WAVE, payload: response.data });
+      dispatch({ type: CLEAR_ERRORS });
+    })
+    .catch(err => {
+      dispatch({ type: SET_ERRORS, payload: err.response.data });
+    });
+};
 
+//DELETE WAVE
 export const deleteWave = waveID => dispatch => {
-  axios.delete(`/wave/${waveID}`)
-      .then(() => {
-        dispatch({type: DELETE_WAVE, payload: waveID})
-            .catch(err =>console.log(err))
-      })
+  axios
+    .delete(`/wave/${waveID}`)
+    .then(() => {
+      dispatch({ type: DELETE_WAVE, payload: waveID });
+    })
+    .catch(err => console.log(err));
+};
+
+// GET ONE WAVE
+export const getWave = waveID => dispatch => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .get(`/wave/${waveID}`)
+    .then(response => {
+      dispatch({ type: SET_WAVE, payload: response.data });
+      dispatch({ type: STOP_LOADING_UI });
+    })
+    .catch(err => console.log(err));
+};
+export const clearErrors = () => dispatch => {
+  dispatch({ type: CLEAR_ERRORS });
 };

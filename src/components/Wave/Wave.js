@@ -5,10 +5,10 @@ import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import relativeTime from "dayjs/plugin/relativeTime";
 import DeleteWave from "./DeleteWave";
-
+import WaveDialog from "./WaveDialog";
 //REDUX
 import { connect } from "react-redux";
-import { likeWave, unlikeWave } from "../redux/actions/dataActions";
+import { likeWave, unlikeWave } from "../../redux/actions/dataActions";
 
 //Material UI
 import Avatar from "@material-ui/core/Avatar";
@@ -19,7 +19,9 @@ import CardHeader from "@material-ui/core/CardHeader";
 import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import Favorite from "@material-ui/icons/Favorite";
-import AppButton from "../util/AppButton";
+import AppButton from "../../util/AppButton";
+import LikeButton from "./LikeButton";
+
 const styles = {
   card: {
     display: "flex",
@@ -36,22 +38,7 @@ const styles = {
   }
 };
 class Wave extends Component {
-  //METHODS
-  likedWave = () => {
-    if (
-      this.props.user.likes &&
-      this.props.user.likes.find(like => like.waveID === this.props.wave.waveID)
-    )
-      return true;
-    else return false;
-  };
-  likeWave = () => {
-    this.props.likeWave(this.props.wave.waveID);
-  };
 
-  unlikeWave = () => {
-    this.props.unlikeWave(this.props.wave.waveID);
-  };
   render() {
     //Get the time our waves are liked, created etc.
     dayjs.extend(relativeTime);
@@ -71,24 +58,6 @@ class Wave extends Component {
         credentials: { handle }
       }
     } = this.props;
-    const likeButton = !authenticated ? (
-      //First: If User is not logged in icon will take to login page.
-      <AppButton tip="Like">
-        <Link to="/login">
-          <FavoriteBorder color={"primary"} />
-        </Link>
-      </AppButton>
-    ) : //Second: If Wave is liked there will be an unlike icon (undo like).
-    this.likedWave() ? (
-      <AppButton tip="Undo Like" onClick={this.unlikeWave}>
-        <Favorite color="primary" />
-      </AppButton>
-    ) : (
-      //Third: if Wave is not like user will be able to like the wave.
-      <AppButton tip="Like" onClick={this.likeWave}>
-        <FavoriteBorder color="primary" />
-      </AppButton>
-    );
     const deleteButton =
       authenticated && userHandle === handle ? (
         <DeleteWave waveID={waveID} />
@@ -96,7 +65,10 @@ class Wave extends Component {
     return (
       <div>
         <Card className={classes.card}>
-          <CardContent className={classes.details} style={{position: "relative"}}>
+          <CardContent
+            className={classes.details}
+            style={{ position: "relative" }}
+          >
             <div className="delete-button">{deleteButton}</div>
             <div style={{ display: "block" }}>
               <Avatar
@@ -119,17 +91,23 @@ class Wave extends Component {
                 </Typography>
               </div>
             </div>
+
             <div className="avatar-container">
               <Typography variant="body2" color="textSecondary">
                 {dayjs(createdAt).fromNow()}
               </Typography>
             </div>
+            <WaveDialog
+                waveID={waveID}
+                userHandle={userHandle}
+                openDialog={this.props.openDialog}
+            />
             <div className="wave-container">
               <div className="wave-body">
                 <Typography variant="body1">{body}</Typography>
               </div>
               <div className="like-comment-icon">
-                {likeButton}
+                <LikeButton waveID={waveID} color="primary"/>
                 <span>
                   {likeCount} <span className="like-comment">Likes</span>
                 </span>
@@ -153,7 +131,8 @@ Wave.propTypes = {
   unlikeWave: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   wave: PropTypes.object.isRequired,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  openDialog: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
