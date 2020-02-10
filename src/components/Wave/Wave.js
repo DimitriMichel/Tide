@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import relativeTime from "dayjs/plugin/relativeTime";
 import DeleteWave from "./DeleteWave";
 import WaveDialog from "./WaveDialog";
+import Button from "@material-ui/core/Button";
 //REDUX
 import { connect } from "react-redux";
 import { likeWave, unlikeWave } from "../../redux/actions/dataActions";
@@ -21,7 +22,7 @@ import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import Favorite from "@material-ui/icons/Favorite";
 import AppButton from "../../util/AppButton";
 import LikeButton from "./LikeButton";
-
+import IconButton from "@material-ui/core/IconButton";
 const styles = {
   card: {
     display: "flex",
@@ -38,7 +39,6 @@ const styles = {
   }
 };
 class Wave extends Component {
-
   render() {
     //Get the time our waves are liked, created etc.
     dayjs.extend(relativeTime);
@@ -97,23 +97,23 @@ class Wave extends Component {
                 {dayjs(createdAt).fromNow()}
               </Typography>
             </div>
-            <WaveDialog
-                waveID={waveID}
-                userHandle={userHandle}
-                openDialog={this.props.openDialog}
-            />
+
             <div className="wave-container">
               <div className="wave-body">
                 <Typography variant="body1">{body}</Typography>
               </div>
               <div className="like-comment-icon">
-                <LikeButton waveID={waveID} color="primary"/>
+                <LikeButton waveID={waveID} color="primary" />
                 <span>
                   {likeCount} <span className="like-comment">Likes</span>
                 </span>
-                <AppButton tip="Comments">
-                  <ChatIcon color="secondary" />
-                </AppButton>
+                <Button style={{ backgroundColor: 'transparent' }} disableTouchRipple={true} disableFocusRipple={true}>
+                  <WaveDialog
+                    waveID={waveID}
+                    userHandle={userHandle}
+                    openDialog={this.props.openDialog}
+                  />
+                </Button>
                 <span>
                   {commentCount} <span className="like-comment">Comments</span>
                 </span>

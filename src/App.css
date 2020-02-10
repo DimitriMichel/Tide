@@ -115,12 +115,25 @@ body {
   left: 91%;
   top: 6%;
 }
-.comment-user-details{
+.comment-user-details {
   padding-left: 12px;
 }
-
-.MuiDialogContent-root.WaveDialog-dialogContent-311{
+.dialog-profile-image {
+  max-width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 60%;
+}
+.MuiDialogContent-root.WaveDialog-dialogContent-311 {
   padding-bottom: 0;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-2 {
+  justify-content: center;
+  vertical-align: center;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-10 {
+  padding-left: 15px;
 }
 @media only screen and (max-width: 600px) {
   .like-comment {
@@ -131,8 +144,9 @@ body {
     width: 100%;
   }
   .wave-body {
-    padding: 0 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     line-height: 1.5;
+    border-top: 2px solid #e6ecf0;
   }
   button.MuiButtonBase-root.MuiIconButton-root {
     padding-top: 0;
@@ -155,10 +169,22 @@ body {
     alignment: center;
     margin: auto;
   }
+  .like-comment-dialog {
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0;
+    border-top: 2px solid #e6ecf0;
+  }
   .delete-button {
     position: absolute;
     top: 5%;
     right: 0;
+  }
+  .delete-button-dialog {
+    position: absolute;
+    top: -10px;
+    right: -6px;
   }
   .close-wave {
     position: absolute;
@@ -168,14 +194,33 @@ body {
   .MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-2 {
     width: 100%;
     text-align: center;
-
   }
-  .comment-handle{
+  .comment-handle {
     width: 100%;
     text-align: center;
   }
-  .comment-user-details{
+  .comment-user-details {
     padding: 0;
     text-align: center;
+    width: 100%;
+  }
+  .dialog-profile-image {
+    margin-top: 0;
+  }
+  .MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-10 {
+    width: 100%;
+    padding: 0;
+  }
+  .MuiButtonBase-root.MuiIconButton-root.WaveDialog-expandButton-292 {
+    padding: 0;
+  }
+  .MuiDialogContent-root.WaveDialog-dialogContent-311 {
+    padding: 0;
+  }
+  .MuiDialogContent-root.WaveDialog-dialogContent-290 {
+    padding: 0;
+  }
+  .MuiButtonBase-root.MuiIconButton-root.WaveDialog-expandButton-313 {
+    padding: 0;
   }
 }

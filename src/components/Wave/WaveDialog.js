@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import AppButton from "../../util/AppButton";
+import Comments from "./Comments";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
@@ -15,10 +16,10 @@ import DialogContent from "@material-ui/core/DialogContent";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-
 import CloseIcon from "@material-ui/icons/Close";
 import UnfoldMore from "@material-ui/icons/UnfoldMore";
 import ChatIcon from "@material-ui/icons/Chat";
+import HighlightOff from "@material-ui/icons/HighlightOff";
 
 const styles = theme => ({
   ...theme.spreadTheme,
@@ -26,7 +27,9 @@ const styles = theme => ({
     maxWidth: 100,
     height: 100,
     borderRadius: "50%",
-    objectFit: "cover"
+    objectFit: "cover",
+    verticalAlign: "center",
+    marginTop: "60%"
   },
   dialogContent: {
     padding: 20
@@ -35,10 +38,7 @@ const styles = theme => ({
     position: "absolute",
     left: "90%"
   },
-  expandButton: {
-    position: "absolute",
-    left: "90%"
-  },
+  expandButton: {},
   spinnerDiv: {
     textAlign: "center",
     marginTop: 50,
@@ -96,12 +96,12 @@ class WaveDialog extends Component {
     } = this.props;
     const dialogMarkup = loading ? (
       <div className={classes.spinnerDiv}>
-        <CircularProgress size={200} thickness={2} />
+        <CircularProgress size={200} thickness={2} color="secondary" />
       </div>
     ) : (
       <Grid container spacing={16}>
         <Grid item sm={2}>
-          <img src={userImage} alt="Profile" className={classes.profileImage} />
+          <img src={userImage} alt="Profile" className="dialog-profile-image" />
         </Grid>
         <Grid item sm={10}>
           <div className="comment-user-details">
@@ -124,24 +124,31 @@ class WaveDialog extends Component {
           <div className="wave-body">
             <Typography variant="body1">{body}</Typography>
           </div>
-          <LikeButton waveID={waveID} />
-          <span>{likeCount} likes</span>
-          <AppButton tip="comments">
-            <ChatIcon color="secondary" />
-          </AppButton>
-          <span>{commentCount} comments</span>
+          <div className="like-comment-dialog">
+            <LikeButton waveID={waveID} />
+
+            <span>
+              {likeCount} <span className="like-comment">Likes</span>
+            </span>
+            <AppButton>
+              <ChatIcon color="secondary" />
+            </AppButton>
+            <span>
+              {commentCount} <span className="like-comment">Comments</span>
+            </span>
+          </div>
         </Grid>
-        <hr className={classes.visibleSeparator} />
+        <Comments comments={comments} />
       </Grid>
     );
     return (
       <Fragment>
         <AppButton
           onClick={this.handleOpen}
-          tip="Wave Details"
+          tip="Comments"
           tipClassName={classes.expandButton}
         >
-          <UnfoldMore color="secondary" />
+          <ChatIcon color="secondary" />
         </AppButton>
         <Dialog
           open={this.state.open}
@@ -149,16 +156,20 @@ class WaveDialog extends Component {
           fullWidth
           maxWidth="sm"
         >
-          <AppButton
-            tip="Close"
-            onClick={this.handleClose}
-            tipClassName={classes.closeButton}
-          >
-            <CloseIcon />
-          </AppButton>
-          <DialogContent className={classes.dialogContent}>
-            {dialogMarkup}
-          </DialogContent>
+          <div className="dialog-container" style={{ padding: "15px" }}>
+            <AppButton
+              tip="Close"
+              onClick={this.handleClose}
+              tipClassName={classes.closeButton}
+            >
+              <div className="delete-button-dialog">
+                <HighlightOff color="secondary" fontSize="medium" />
+              </div>
+            </AppButton>
+            <DialogContent className={classes.dialogContent}>
+              {dialogMarkup}
+            </DialogContent>
+          </div>
         </Dialog>
       </Fragment>
     );
