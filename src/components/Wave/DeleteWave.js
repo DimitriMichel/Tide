@@ -41,7 +41,7 @@ class DeleteWave extends Component {
           onClick={this.handleOpen}
           btnClassName={classes.deleteButton}
         >
-          <HighlightOff color="secondary" fontSize='small' />
+          <HighlightOff color="secondary" size='small' />
         </AppButton>
         <Dialog
           open={this.state.open}
@@ -66,7 +66,7 @@ class DeleteWave extends Component {
 DeleteWave.propTypes = {
   deleteWave: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
-  screamId: PropTypes.string.isRequired
+  waveID: PropTypes.string.isRequired
 };
 export default connect(
   null,

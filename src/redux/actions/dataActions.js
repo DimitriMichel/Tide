@@ -1,26 +1,29 @@
 import {
+  SET_WAVES,
   LOADING_DATA,
   LIKE_WAVE,
   UNLIKE_WAVE,
-  SET_WAVES,
-  SET_WAVE,
   DELETE_WAVE,
-  LOADING_UI,
+  SET_ERRORS,
   POST_WAVE,
   CLEAR_ERRORS,
-  SET_ERRORS,
-  STOP_LOADING_UI
+  LOADING_UI,
+  SET_WAVE,
+  STOP_LOADING_UI,
+  SUBMIT_COMMENT
 } from "../types";
-
 import axios from "axios";
 
-//GET ALL WAVES
+// Get all waves
 export const getWaves = () => dispatch => {
   dispatch({ type: LOADING_DATA });
   axios
     .get("/waves")
-    .then(result => {
-      dispatch({ type: SET_WAVES, payload: result.data });
+    .then(res => {
+      dispatch({
+        type: SET_WAVES,
+        payload: res.data
+      });
     })
     .catch(err => {
       dispatch({
@@ -29,41 +32,80 @@ export const getWaves = () => dispatch => {
       });
     });
 };
-
-//LIKE WAVE
-export const likeWave = waveID => dispatch => {
+export const getWave = waveID => dispatch => {
+  dispatch({ type: LOADING_UI });
   axios
-    .get(`/wave/${waveID}/like`)
-    .then(result => {
-      dispatch({ type: LIKE_WAVE, payload: result.data });
+    .get(`/wave/${waveID}`)
+    .then(res => {
+      dispatch({
+        type: SET_WAVE,
+        payload: res.data
+      });
+      dispatch({ type: STOP_LOADING_UI });
     })
     .catch(err => console.log(err));
 };
-
-//UNLIKE WAVE
-export const unlikeWave = waveID => dispatch => {
-  axios
-    .get(`/wave/${waveID}/unlike`)
-    .then(result => {
-      dispatch({ type: UNLIKE_WAVE, payload: result.data });
-    })
-    .catch(err => console.log(err));
-};
-//POST WAVE
+// Post a scream
 export const postWave = newWave => dispatch => {
   dispatch({ type: LOADING_UI });
   axios
     .post("/wave", newWave)
-    .then(response => {
-      dispatch({ type: POST_WAVE, payload: response.data });
-      dispatch({ type: CLEAR_ERRORS });
+    .then(res => {
+      dispatch({
+        type: POST_WAVE,
+        payload: res.data
+      });
+      dispatch(clearErrors());
     })
     .catch(err => {
-      dispatch({ type: SET_ERRORS, payload: err.response.data });
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data
+      });
     });
 };
-
-//DELETE WAVE
+// Like a scream
+export const likeWave = waveID => dispatch => {
+  axios
+    .get(`/wave/${waveID}/like`)
+    .then(res => {
+      dispatch({
+        type: LIKE_WAVE,
+        payload: res.data
+      });
+    })
+    .catch(err => console.log(err));
+};
+// Unlike a scream
+export const unlikeWave = waveID => dispatch => {
+  axios
+    .get(`/wave/${waveID}/unlike`)
+    .then(res => {
+      dispatch({
+        type: UNLIKE_WAVE,
+        payload: res.data
+      });
+    })
+    .catch(err => console.log(err));
+};
+// Submit a comment
+export const submitComment = (waveID, commentData) => dispatch => {
+  axios
+    .post(`/wave/${waveID}/comment`, commentData)
+    .then(res => {
+      dispatch({
+        type: SUBMIT_COMMENT,
+        payload: res.data
+      });
+      dispatch(clearErrors());
+    })
+    .catch(err => {
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data
+      });
+    });
+};
 export const deleteWave = waveID => dispatch => {
   axios
     .delete(`/wave/${waveID}`)
@@ -73,17 +115,24 @@ export const deleteWave = waveID => dispatch => {
     .catch(err => console.log(err));
 };
 
-// GET ONE WAVE
-export const getWave = waveID => dispatch => {
-  dispatch({ type: LOADING_UI });
+export const getUserData = userHandle => dispatch => {
+  dispatch({ type: LOADING_DATA });
   axios
-    .get(`/wave/${waveID}`)
-    .then(response => {
-      dispatch({ type: SET_WAVE, payload: response.data });
-      dispatch({ type: STOP_LOADING_UI });
+    .get(`/user/${userHandle}`)
+    .then(res => {
+      dispatch({
+        type: SET_WAVES,
+        payload: res.data.waves
+      });
     })
-    .catch(err => console.log(err));
+    .catch(() => {
+      dispatch({
+        type: SET_WAVES,
+        payload: null
+      });
+    });
 };
+
 export const clearErrors = () => dispatch => {
   dispatch({ type: CLEAR_ERRORS });
 };

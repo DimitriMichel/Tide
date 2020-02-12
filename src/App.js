@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
@@ -17,18 +17,17 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
-
+import user from "./pages/user";
+import news from "./pages/news"
 //COMPONENTS
 import Navbar from "./components/Structure/Navbar";
 import AuthRoute from "./util/AuthRoute";
 
 const theme = createMuiTheme(themeConfig);
 
-let authenticated;
 const token = localStorage.FBIdToken;
 if (token) {
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
   // Set Token Expiry Window
   if (decodedToken.exp * 1001 < Date.now()) {
     store.dispatch(logoutUser());
@@ -46,13 +45,15 @@ class App extends Component {
         <Provider store={store}>
           <div className="App">
             <Router>
-
               <Navbar />
 
               <Switch>
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
+                <Route exact path="/user/:handle" component={user}/>
+                <Route exact path="/user/:handle/wave/:waveID" component={user}/>
+                <Route exact path="/news" component={news}/>
               </Switch>
             </Router>
           </div>

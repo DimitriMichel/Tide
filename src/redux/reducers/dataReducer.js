@@ -5,7 +5,8 @@ import {
   LOADING_DATA,
   DELETE_WAVE,
   POST_WAVE,
-  SET_WAVE
+  SET_WAVE,
+  SUBMIT_COMMENT
 } from "../types";
 
 const initialState = {
@@ -39,7 +40,9 @@ export default function(state = initialState, action) {
       );
       state.waves[index] = action.payload;
       if (state.wave.waveID === action.payload.waveID) {
+        let tempCommentsArray = state.wave.comments;
         state.wave = action.payload;
+        state.wave.comments = tempCommentsArray;
       }
       return {
         ...state
@@ -57,6 +60,15 @@ export default function(state = initialState, action) {
         ...state,
         waves: [action.payload, ...state.waves]
       };
+    case SUBMIT_COMMENT:
+      return {
+        ...state,
+        wave: {
+          ...state.wave,
+          comments: [action.payload, ...state.wave.comments]
+        }
+      };
+
     default:
       return state;
   }

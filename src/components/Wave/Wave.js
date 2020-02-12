@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import relativeTime from "dayjs/plugin/relativeTime";
 import DeleteWave from "./DeleteWave";
 import WaveDialog from "./WaveDialog";
-import Button from "@material-ui/core/Button";
+
 //REDUX
 import { connect } from "react-redux";
 import { likeWave, unlikeWave } from "../../redux/actions/dataActions";
@@ -16,13 +16,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import CardHeader from "@material-ui/core/CardHeader";
-import ChatIcon from "@material-ui/icons/Chat";
-import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
-import Favorite from "@material-ui/icons/Favorite";
-import AppButton from "../../util/AppButton";
 import LikeButton from "./LikeButton";
-import IconButton from "@material-ui/core/IconButton";
 const styles = {
   card: {
     display: "flex",
@@ -76,7 +70,7 @@ class Wave extends Component {
                 src={userImage}
                 alt={userHandle}
                 component={Link}
-                to={`/users/${userHandle}`}
+                to={`/user/${userHandle}`}
                 style={{ float: "left" }}
               >
                 {" "}
@@ -84,7 +78,7 @@ class Wave extends Component {
               <div className="avatar-container">
                 <Typography
                   component={Link}
-                  to={`/users/${userHandle}`}
+                  to={`/user/${userHandle}`}
                   style={{ display: "inline !important" }}
                 >
                   {userHandle}
@@ -103,20 +97,23 @@ class Wave extends Component {
                 <Typography variant="body1">{body}</Typography>
               </div>
               <div className="like-comment-icon">
-                <LikeButton waveID={waveID} color="primary" />
-                <span>
-                  {likeCount} <span className="like-comment">Likes</span>
-                </span>
-                <Button style={{ backgroundColor: 'transparent' }} disableTouchRipple={true} disableFocusRipple={true}>
+                <div className="like-button">
+                  <LikeButton waveID={waveID} color="primary" />
+                  <div className="like-count">
+                    {likeCount} <span className="like-comment">Likes</span>
+                  </div>
+                </div>
+                <div className="comment-button">
                   <WaveDialog
                     waveID={waveID}
                     userHandle={userHandle}
                     openDialog={this.props.openDialog}
                   />
-                </Button>
-                <span>
-                  {commentCount} <span className="like-comment">Comments</span>
-                </span>
+                  <div className="comment-count">
+                    {commentCount}{" "}
+                    <span className="like-comment">Comments</span>
+                  </div>
+                </div>
               </div>
             </div>
           </CardContent>

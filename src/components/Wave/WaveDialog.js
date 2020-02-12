@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import AppButton from "../../util/AppButton";
 import Comments from "./Comments";
+import CommentForm from "./CommentForm";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
@@ -16,8 +17,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import CloseIcon from "@material-ui/icons/Close";
-import UnfoldMore from "@material-ui/icons/UnfoldMore";
+
 import ChatIcon from "@material-ui/icons/Chat";
 import HighlightOff from "@material-ui/icons/HighlightOff";
 
@@ -65,9 +65,9 @@ class WaveDialog extends Component {
     let oldPath = window.location.pathname;
 
     const { userHandle, waveID } = this.props;
-    const newPath = `/users/${userHandle}/wave/${waveID}`;
+    const newPath = `/user/${userHandle}/wave/${waveID}`;
 
-    if (oldPath === newPath) oldPath = `/wave/${userHandle}`;
+    if (oldPath === newPath) oldPath = `/user/${userHandle}`;
 
     window.history.pushState(null, null, newPath);
 
@@ -126,18 +126,18 @@ class WaveDialog extends Component {
           </div>
           <div className="like-comment-dialog">
             <LikeButton waveID={waveID} />
-
             <span>
               {likeCount} <span className="like-comment">Likes</span>
             </span>
-            <AppButton>
-              <ChatIcon color="secondary" />
+            <AppButton style={{ width: "50px" }}>
+              <ChatIcon color="secondary" size="small" />
             </AppButton>
-            <span>
+            <span style={{paddingLeft: "5px"}}>
               {commentCount} <span className="like-comment">Comments</span>
             </span>
           </div>
         </Grid>
+        <CommentForm waveID={waveID} />
         <Comments comments={comments} />
       </Grid>
     );
@@ -156,20 +156,18 @@ class WaveDialog extends Component {
           fullWidth
           maxWidth="sm"
         >
-          <div className="dialog-container" style={{ padding: "15px" }}>
-            <AppButton
-              tip="Close"
-              onClick={this.handleClose}
-              tipClassName={classes.closeButton}
-            >
-              <div className="delete-button-dialog">
-                <HighlightOff color="secondary" fontSize="medium" />
-              </div>
-            </AppButton>
-            <DialogContent className={classes.dialogContent}>
-              {dialogMarkup}
-            </DialogContent>
-          </div>
+          <AppButton
+            tip="Close"
+            onClick={this.handleClose}
+            tipClassName={classes.closeButton}
+          >
+            <div className="delete-button-dialog">
+              <HighlightOff color="secondary" size="medium" />
+            </div>
+          </AppButton>
+          <DialogContent className={classes.dialogContent}>
+            {dialogMarkup}
+          </DialogContent>
         </Dialog>
       </Fragment>
     );

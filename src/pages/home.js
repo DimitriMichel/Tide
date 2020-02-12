@@ -1,24 +1,22 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
-import News from "../API/News";
 import Wave from "../components/Wave/Wave";
 import Profile from "../components/Profile/Profile";
 import { connect } from "react-redux";
 import { getWaves } from "../redux/actions/dataActions";
 import PropTypes from "prop-types";
+import News from "../API/News";
 
 class home extends Component {
   componentDidMount() {
     this.props.getWaves();
-    News
-      .get("/v2/top-headlines", {
-        params: {
-          country: "us"
-        }
-      })
-      .then(response => {
-        console.log(response);
-      });
+    News.get("/v2/top-headlines", {
+      params: {
+        country: "us"
+      }
+    }).then(response => {
+      console.log(response);
+    });
   }
 
   render() {

@@ -66,6 +66,7 @@ class login extends Component {
             <form noValidate onSubmit={this.handleSubmit}>
               <TextField
                 fullWidth
+                color="secondary"
                 id="email"
                 name="email"
                 variant="outlined"
@@ -79,6 +80,7 @@ class login extends Component {
               />
               <TextField
                 fullWidth
+                color="secondary"
                 id="password"
                 name="password"
                 variant="outlined"

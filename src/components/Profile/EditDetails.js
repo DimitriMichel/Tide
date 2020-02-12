@@ -2,10 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import AppButton from "../../util/AppButton";
 //MATERIAL UI
-
 import withStyles from "@material-ui/core/styles/withStyles";
-import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -13,12 +10,10 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import EditIcon from "@material-ui/icons/Edit";
-import Edit from "@material-ui/icons";
 
 //REDUX
 import { connect } from "react-redux";
 import { editUserDetails } from "../../redux/actions/userActions";
-import App from "../../App";
 
 const styles = theme => ({
   ...theme.spreadTheme
@@ -78,8 +73,12 @@ class EditDetails extends Component {
     const { classes } = this.props;
     return (
       <Fragment>
-        <AppButton tip="Edit Details" onClick={this.handleOpen} btnClassName={classes.button}>
-          <EditIcon color="secondary"/>
+        <AppButton
+          tip="Edit Details"
+          onClick={this.handleOpen}
+          btnClassName={classes.button}
+        >
+          <EditIcon color="secondary" />
         </AppButton>
         <Dialog
           open={this.state.open}

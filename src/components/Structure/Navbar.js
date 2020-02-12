@@ -11,7 +11,6 @@ import Button from "@material-ui/core/Button";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import AssignmentRoundedIcon from "@material-ui/icons/AssignmentRounded";
-import AddIcon from "@material-ui/icons/Add";
 import HomeIcon from "@material-ui/icons/Home";
 import Notifications from "@material-ui/icons/Notifications";
 import RssFeedIcon from "@material-ui/icons/RssFeed";

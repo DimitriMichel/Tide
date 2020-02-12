@@ -81,30 +81,29 @@ class Profile extends Component {
               src={imageUrl}
               alt="profile"
               component={Link}
+              to="/"
               style={{ marginLeft: "auto", marginRight: "auto" }}
             />
             <br />
             <div className="profile-details">
               <MuiLink
                 component={Link}
-                to={`users/${handle}`}
+                to={`user/${handle}`}
                 color="secondary"
                 variant="h5"
               >
                 @{handle}
               </MuiLink>
               <br />
-              {bio && <Typography variant="body2" className="bio">{bio}</Typography>}
+              {bio && (
+                <Typography variant="body2" className="bio">
+                  {bio}
+                </Typography>
+              )}
               <br />
-              <div
-                style={{
-                  backgroundColor: "#E6ECF0",
-                  padding: "5px",
-                  borderRadius: "4px"
-                }}
-              >
+              <div className="location-website-date">
                 {location && (
-                  <Fragment style={{ whiteSpace: "pre-line" }}>
+                  <Fragment>
                     <LocationOn
                       color="secondary"
                       style={{ whiteSpace: "pre-line" }}
