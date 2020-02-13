@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import News from "../API/News";
 import Profile from "../components/Profile/Profile";
+import imageLinkContainer from "../util/NewsImageLinks"
 //MUI
 import Avatar from "@material-ui/core/Avatar";
 import CardContent from "@material-ui/core/CardContent";
@@ -47,6 +48,7 @@ class news extends Component {
       this.setState({ articlesList: response.data.articles });
     });
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -79,89 +81,10 @@ class news extends Component {
                 );
 
                 //Dummy News Logos
-                let sourceLogo;
-                if (article.source.name === "Engadget") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/655059892022022144/Pq3Q_1oU_400x400.png";
-                } else if (article.source.name === "Politico") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/677177503694237697/y6yTzWn6_400x400.png";
-                } else if (article.source.name === "Fox News") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/918480715158716419/4X8oCbge_400x400.jpg";
-                } else if (article.source.name === "CNN") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_400x400.png";
-                } else if (article.source.name === "Nytimes.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_400x400.png";
-                } else if (article.source.name === "MSNBC News") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/988382060443250689/DijesdNB_400x400.jpg";
-                } else if (article.source.name === "CNBC") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1185182366156894208/pKRddT3o_400x400.png";
-                } else if (article.source.name === "Deadline.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1116019573981974528/2El9E56p_400x400.png";
-                } else if (article.source.name === "Variety.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1060236422500704257/jltNN1hQ_400x400.jpg";
-                } else if (article.source.name === "Bbc.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1150716997254209536/M7gkjsv5_400x400.jpg";
-                } else if (article.source.name === "Entertainment Weekly") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1179528337401581568/rD4Mkr1c_400x400.png";
-                } else if (article.source.name === "Npr.org") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1208165423109292032/_oEEIsvx_400x400.jpg";
-                } else if (article.source.name === "Business Insider") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1199017286780231684/P_hQmsjg_400x400.jpg";
-                } else if (article.source.name === "Youtube.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1209179754273730567/ocZKRu9P_400x400.jpg";
-                } else if (article.source.name === "Cbssports.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/914938790787125248/aDe8EkHk_400x400.jpg";
-                } else if (article.source.name === "Si.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/876883699559780352/ixURaEXt_400x400.jpg";
-                } else if (article.source.name === "Marketwatch.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/705601245596090368/Z6xUOnRg_400x400.jpg";
-                } else if (article.source.name === "NBC News") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1226931167472959488/gy-19Sox_400x400.jpg";
-                } else if (article.source.name === "Nypost.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/966372680306868224/60wfGe9e_400x400.jpg";
-                } else if (article.source.name === "Avclub.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1145717993328001030/UHdt_Nam_400x400.png";
-                } else if (article.source.name === "Pitchfork.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1137326502624841729/YX-bRuJZ_400x400.jpg";
-                } else if (article.source.name === "Reuters") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1194751949821939712/3VBu4_Sa_400x400.jpg";
-                } else if (article.source.name === "The Washington Post") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/1060271522319925257/fJKwJ0r2_400x400.jpg";
-                } else if (article.source.name === "The Wall Street Journal") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/971415515754266624/zCX0q9d5_400x400.jpg";
-                } else if (article.source.name === "The Verge") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/877903823133704194/Mqp1PXU8_400x400.jpg";
-                } else if (article.source.name === "Foxbusiness.com") {
-                  sourceLogo =
-                    "https://pbs.twimg.com/profile_images/875384861736841217/j4vwsisS_400x400.jpg";
-                } else {
-                  sourceLogo =
-                    "https://cdn1.vectorstock.com/i/thumb-large/39/10/world-news-flat-icon-news-symbol-logo-vector-20093910.jpg";
-                }
+                let newsLogo;
+                if (imageLinkContainer[article.source.name]){
+                  newsLogo = imageLinkContainer[article.source.name];
+                } else newsLogo = "https://cdn1.vectorstock.com/i/thumb-large/39/10/world-news-flat-icon-news-symbol-logo-vector-20093910.jpg";
 
                 return (
                   <div>
@@ -173,7 +96,7 @@ class news extends Component {
                         <div style={{ display: "block" }}>
                           <Avatar
                             className="wave-avatar"
-                            src={sourceLogo}
+                            src={newsLogo}
                             alt="report"
                             component={Link}
                             to={"/news"}
