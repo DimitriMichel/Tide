@@ -33,7 +33,8 @@ class login extends Component {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
-
+  //andrew@email.com
+  //openup
   //loading set true while submit handler and axios fetch data
   handleSubmit = event => {
     event.preventDefault();
@@ -46,6 +47,14 @@ class login extends Component {
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+  handleDemoClick = event => {
+    event.preventDefault();
+    const userData = {
+      email: "andrew@email.com",
+      password: "openup"
+    };
+    this.props.loginUser(userData, this.props.history);
   };
   render() {
     const {
@@ -114,10 +123,27 @@ class login extends Component {
                 )}
               </Button>
               <br />
+              <Button
+                onClick={this.handleDemoClick}
+                type="submit"
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                disabled={loading}
+              >
+                Demo
+                {loading && (
+                  <CircularProgress
+                    size={33}
+                    className={classes.progress}
+                    color="secondary"
+                  />
+                )}
+              </Button>
               <div className={classes.formLink}>
-              <small>
-                <Link to="/signup">Sign up today! </Link>
-              </small>
+                <small className="signup-small">
+                  <Link to="/signup">Sign up today! </Link>
+                </small>
               </div>
             </form>
           </div>

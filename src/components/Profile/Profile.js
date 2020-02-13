@@ -2,9 +2,10 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Link from "react-router-dom/Link";
 import dayjs from "dayjs";
-import Avatar from "@material-ui/core/Avatar";
+import ProfileScaffolding from "../../util/ProfileScaffolding";
 
 //MATERIAL UI
+import Avatar from "@material-ui/core/Avatar";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
@@ -15,9 +16,10 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import IconButton from "@material-ui/core/IconButton";
-import EditIcon from "@material-ui/icons/Edit";
+import EditIcon from "@material-ui/icons/Face";
 import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 import EditDetails from "./EditDetails";
+
 //REDUX
 import { connect } from "react-redux";
 import { logoutUser, uploadImage } from "../../redux/actions/userActions";
@@ -63,18 +65,6 @@ class Profile extends Component {
               onChange={this.handleImageChange}
               hidden="hidden"
             />
-            <Tooltip title="Change Profile Picture" placement="bottom">
-              <IconButton
-                onClick={this.handleChangePicture}
-                className="button"
-                style={{
-                  left: "92%",
-                  padding: 5
-                }}
-              >
-                <EditIcon color="secondary" />
-              </IconButton>
-            </Tooltip>
             <br />
             <Avatar
               className={classes.avatar}
@@ -132,6 +122,14 @@ class Profile extends Component {
                   </IconButton>
                 </Tooltip>
                 <EditDetails />
+                <Tooltip title="Change Profile Picture" placement="bottom">
+                  <IconButton
+                    onClick={this.handleChangePicture}
+                    className="button"
+                  >
+                    <EditIcon color="secondary" />
+                  </IconButton>
+                </Tooltip>
               </div>
             </div>
           </div>
@@ -164,7 +162,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>Loading...</p>
+      <ProfileScaffolding />
     );
     return profileMarkup;
   }

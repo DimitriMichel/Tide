@@ -5,8 +5,7 @@ import Profile from "../components/Profile/Profile";
 import { connect } from "react-redux";
 import { getWaves } from "../redux/actions/dataActions";
 import PropTypes from "prop-types";
-import News from "../API/News";
-
+import WaveScaffolding from "../util/WaveScaffolding";
 class home extends Component {
   componentDidMount() {
     this.props.getWaves();
@@ -17,14 +16,16 @@ class home extends Component {
     let recentWaves = !loading ? (
       waves.map(wave => <Wave key={wave.waveID} wave={wave} />)
     ) : (
-      <p>Loading..</p>
+      <WaveScaffolding />
     );
 
     return (
       <div className="container">
         <Grid container spacing={3}>
           <Grid item sm={4} xs={12}>
-            <Profile />
+            <div className="fix-profile">
+              <Profile />
+            </div>
           </Grid>
 
           <Grid item sm={8} xs={12}>

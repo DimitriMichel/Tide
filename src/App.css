@@ -14,9 +14,7 @@ body {
   border-bottom: 2px solid #e6ecf0;
   border-radius: 15px 15px 0 0;
 }
-.MuiCardContent-root.news-details-113 {
-  padding: 15px 10px 0 !important;
-}
+
 .Button:hover {
   color: #ffff8d;
 }
@@ -28,25 +26,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-.MuiButton-label {
-  font-family: -apple-system, BlinkMacSystemFont, " Helvetica Neue", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-weight: 200 !important;
+.signup-small{
+  text-decoration: underline black;
 }
 
-.MuiTypography-h1 {
-  font-family: -apple-system, BlinkMacSystemFont, " Helvetica Neue", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif !important;
-  font-weight: bold !important;
-  font-size: 2em !important;
-}
-
-.MuiButton-root {
-  text-transform: none !important;
-}
 
 .parent-span svg {
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -55,22 +38,13 @@ a:hover {
 .parent-span:hover svg {
   fill: #00beff !important;
 }
-
-.MuiCardHeader-root {
-  background-color: #e6ecf0;
-}
 .location-website-date {
   background-color: #e6ecf0;
   padding: 5px;
   border-radius: 4px;
   font-size: 14px;
 }
-.MuiCardHeader-avatar {
-  margin: 0 !important;
-}
-.MuiCardContent-root {
-  padding: 16px 16px 0 16px !important;
-}
+
 .profile-buttons-container {
   margin-top: 15px;
   background-color: #e6ecf0;
@@ -85,43 +59,6 @@ body {
 .wave-container {
   padding: 10px 0 0 24px;
 }
-.news-wave-container {
-  padding: 10px 0 15px 0;
-}
-.new-image {
-  display: block;
-  text-align: center;
-  justify-content: center;
-  align-self: center;
-}
-.news-image-link {
-  border: solid #e6ecf0 1px;
-  border-radius: 4px;
-  display: block;
-  margin: auto;
-}
-.news-article-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-  padding-bottom: 10px;
-  border-radius: 4px;
-}
-
-.news-wave-body {
-  padding: 0 0 0 0;
-  line-height: 1.5;
-  margin: 10px;
-}
-.wave-body {
-  padding: 0 0 0 12px;
-  line-height: 1.5;
-  margin: 10px;
-}
-.news-body-text {
-  padding-bottom: 15px;
-}
 .wave-avatar {
   width: 100px;
   height: 100px;
@@ -132,16 +69,10 @@ body {
 }
 
 .container {
-  padding: 16px 4px 4px 4px;
-}
-.MuiCardContent-root {
-  width: 100%;
-  padding-right: 0;
+  padding: 10px 30px 4px 30px;
 }
 
-.MuiPaper-root.MuiPaper-elevation1.MuiCard-root.Wave-card-272.MuiPaper-rounded {
-  position: relative;
-}
+
 .delete-button {
   position: absolute;
   top: 0;
@@ -155,6 +86,7 @@ body {
   left: 91%;
   top: 6%;
 }
+
 .separator {
   width: 100%;
   padding-bottom: 20px;
@@ -177,16 +109,7 @@ body {
   object-fit: cover;
   margin-top: 30%;
 }
-.MuiDialogContent-root.WaveDialog-dialogContent-311 {
-  padding-bottom: 0;
-}
-.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-2 {
-  justify-content: center;
-  vertical-align: center;
-}
-.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-10 {
-  padding-left: 15px;
-}
+
 .comment-image {
   max-width: 100%;
   height: 50px;
@@ -196,11 +119,8 @@ body {
 .comment-image-container {
   margin-top: 30%;
 }
-.MuiButtonBase-root.MuiIconButton-root.WaveDialog-expandButton-321 {
-  padding: 0px !important;
-}
-span.MuiButton-label {
-}
+
+
 .comment-form {
   display: flex;
   flex-direction: row;
@@ -239,27 +159,102 @@ span.MuiButton-label {
 .like-count {
   display: inline-block;
 }
-.MuiButtonBase-root.MuiButton-root.MuiButton-contained.submit-btn.MuiButton-containedSecondary {
-  margin-left: 10px;
-  margin-top: 10px;
-  padding: 5px !important;
-  height: 40px;
-}
 
 .Comments-commentData-537 {
   width: 75% !important;
 }
 
+.wave-body {
+  padding: 0 0 0 12px;
+  line-height: 1.5;
+  margin: 10px;
+}
+
 /*NEWS*/
+
 .article-source {
   border: solid black 2px;
 }
 .article-url {
   color: blue;
 }
+
+.news-body-text {
+  padding-bottom: 15px;
+  font-size: 2vh;
+}
+
+.news-wave-container {
+  padding: 10px 0 15px 0;
+}
+.new-image {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.news-image-link {
+  border: solid #e6ecf0 1px;
+  border-radius: 4px;
+  display: block;
+  margin: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+.news-article-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-radius: 4px;
+}
+
+.news-wave-body {
+  padding: 0 0 0 0;
+  line-height: 1.5;
+  margin: 10px;
+}
+.fix-profile {
+  position: fixed;
+  width: 29%;
+}
+
+/*DESKTOP*/
+
+@media only screen and (min-width: 1024px) {
+  .news-article-image {
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+  .news-image-link {
+    margin: 10px;
+  }
+  .news-title-link {
+    text-align: center;
+    margin: 0 10px 10px 10px;
+    text-decoration: underline black;
+    font-size: 2vh;
+  }
+  .fix-profile {
+    position: fixed;
+    width: 30%;
+    border: white 2px solid;
+  }
+}
+
+/*MOBILE*/
+
 @media only screen and (max-width: 600px) {
   .news-body-text {
     padding: 10px;
+  }
+  .fix-profile {
+    position: relative;
+    width: 100%;
   }
   .like-comment {
     display: none;
@@ -267,6 +262,10 @@ span.MuiButton-label {
   .wave-container {
     padding: 0 0 10px 0;
     width: 100%;
+  }
+
+  .container {
+    padding: 10px 5px 4px 5px;
   }
   .wave-body {
     padding: 10px 10px 10px 10px;
@@ -282,6 +281,7 @@ span.MuiButton-label {
   }
   .news-title-link {
     text-align: center;
+    font-size: 13px;
     margin: 0 10px 10px 10px;
     text-decoration: underline black;
   }
@@ -372,4 +372,69 @@ span.MuiButton-label {
   .MuiButtonBase-root.MuiIconButton-root.WaveDialog-expandButton-313 {
     padding: 0;
   }
+}
+
+/*MUI (desktop)*/
+
+.MuiButton-label {
+  font-family: -apple-system, BlinkMacSystemFont, " Helvetica Neue", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  font-weight: 200 !important;
+}
+
+.MuiTypography-h1 {
+  font-family: -apple-system, BlinkMacSystemFont, " Helvetica Neue", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif !important;
+  font-weight: bold !important;
+  font-size: 2em !important;
+}
+
+.MuiCardContent-root.news-details-113 {
+  padding: 15px 10px 0 !important;
+}
+
+.MuiButton-root {
+  text-transform: none !important;
+}
+
+.MuiCardHeader-root {
+  background-color: #e6ecf0;
+}
+
+.MuiCardHeader-avatar {
+  margin: 0 !important;
+}
+.MuiCardContent-root {
+  padding: 16px 16px 0 16px !important;
+}
+.MuiPaper-root.MuiPaper-elevation1.MuiCard-root.Wave-card-272.MuiPaper-rounded {
+  position: relative;
+}
+
+.MuiDialogContent-root.WaveDialog-dialogContent-311 {
+  padding-bottom: 0;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-2 {
+  justify-content: center;
+  vertical-align: center;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-10 {
+  padding-left: 15px;
+}
+
+.MuiCardContent-root {
+  width: 100%;
+  padding-right: 0;
+}
+.MuiButtonBase-root.MuiIconButton-root.WaveDialog-expandButton-321 {
+  padding: 0px !important;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.submit-btn.MuiButton-containedSecondary {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 5px !important;
+  height: 40px;
 }
