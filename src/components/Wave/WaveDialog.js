@@ -110,7 +110,7 @@ class WaveDialog extends Component {
                 component={Link}
                 color="secondary"
                 variant="h5"
-                to={`/users/${userHandle}`}
+                to={`/user/${userHandle}`}
               >
                 {userHandle}
               </Typography>

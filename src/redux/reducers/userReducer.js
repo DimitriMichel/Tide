@@ -4,6 +4,7 @@ import {
   SET_UNAUTHENTICATED,
   LOADING_USER,
   LIKE_WAVE,
+  MARK_NOTIFICATIONS_READ,
   UNLIKE_WAVE
 } from "../types";
 
@@ -52,7 +53,11 @@ export default function(state = initialState, action) {
         ...state,
         likes: state.likes.filter(like => like.waveID !== action.payload.waveID)
       };
-
+    case MARK_NOTIFICATIONS_READ:
+      state.notifications.forEach(not => (not.read = true));
+      return {
+        ...state
+      };
     default:
       return state;
   }

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import AppButton from "../../util/AppButton";
 import PostWave from "../Wave/PostWave";
+import Notifications from "./Notifications"
+
 //MATERIAL UI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -12,7 +14,6 @@ import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import AssignmentRoundedIcon from "@material-ui/icons/AssignmentRounded";
 import HomeIcon from "@material-ui/icons/Home";
-import Notifications from "@material-ui/icons/Notifications";
 import RssFeedIcon from "@material-ui/icons/RssFeed";
 //REDUX
 class Navbar extends Component {
@@ -29,10 +30,8 @@ class Navbar extends Component {
                 </AppButton>
               </Link>
               <PostWave />
-              <AppButton tip="Notifications">
                 <Notifications color="secondary" />
-              </AppButton>
-              <Link to="/">
+              <Link to="/news">
                 <AppButton tip="News">
                   <RssFeedIcon color="secondary" />
                 </AppButton>

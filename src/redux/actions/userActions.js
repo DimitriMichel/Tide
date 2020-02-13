@@ -3,6 +3,7 @@ import {
   SET_ERRORS,
   CLEAR_ERRORS,
   LOADING_UI,
+  MARK_NOTIFICATIONS_READ,
   SET_UNAUTHENTICATED,
   LOADING_USER
 } from "../types";
@@ -50,6 +51,16 @@ export const signupUser = (newUserData, history) => dispatch => {
     });
 };
 
+export const markNotificationsRead = notificationIds => dispatch => {
+  axios
+    .post("/notifications", notificationIds)
+    .then(res => {
+      dispatch({
+        type: MARK_NOTIFICATIONS_READ
+      });
+    })
+    .catch(err => console.log(err));
+};
 //Unauthenticated Global state on logout
 export const logoutUser = () => dispatch => {
   localStorage.removeItem("FBIdToken");

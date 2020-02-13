@@ -46,7 +46,6 @@ class App extends Component {
           <div className="App">
             <Router>
               <Navbar />
-
               <Switch>
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />

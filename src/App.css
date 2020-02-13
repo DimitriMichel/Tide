@@ -14,7 +14,9 @@ body {
   border-bottom: 2px solid #e6ecf0;
   border-radius: 15px 15px 0 0;
 }
-
+.MuiCardContent-root.news-details-113 {
+  padding: 15px 10px 0 !important;
+}
 .Button:hover {
   color: #ffff8d;
 }
@@ -58,11 +60,10 @@ a:hover {
   background-color: #e6ecf0;
 }
 .location-website-date {
-  background-color: #E6ECF0;
+  background-color: #e6ecf0;
   padding: 5px;
   border-radius: 4px;
   font-size: 14px;
-
 }
 .MuiCardHeader-avatar {
   margin: 0 !important;
@@ -82,13 +83,44 @@ body {
   background: white;
 }
 .wave-container {
-  padding: 10px 0 0 34px;
+  padding: 10px 0 0 24px;
+}
+.news-wave-container {
+  padding: 10px 0 15px 0;
+}
+.new-image {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+.news-image-link {
+  border: solid #e6ecf0 1px;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
+}
+.news-article-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  padding-bottom: 10px;
+  border-radius: 4px;
 }
 
+.news-wave-body {
+  padding: 0 0 0 0;
+  line-height: 1.5;
+  margin: 10px;
+}
 .wave-body {
   padding: 0 0 0 12px;
   line-height: 1.5;
   margin: 10px;
+}
+.news-body-text {
+  padding-bottom: 15px;
 }
 .wave-avatar {
   width: 100px;
@@ -132,7 +164,7 @@ body {
 .comment-user-details {
   padding-left: 12px;
 }
-.profile-image{
+.profile-image {
   height: 200px;
   width: 200px;
   max-width: 200px;
@@ -193,22 +225,19 @@ span.MuiButton-label {
   padding-left: 10px;
 }
 
-
-
-
 .like-comment-icon {
   display: flex;
   padding: 2px;
 }
-.comment-button{
+.comment-button {
   padding-left: 10px;
-  display:inline-block;
+  display: inline-block;
 }
 .comment-count {
-  display:inline-block
+  display: inline-block;
 }
 .like-count {
-  display:inline-block
+  display: inline-block;
 }
 .MuiButtonBase-root.MuiButton-root.MuiButton-contained.submit-btn.MuiButton-containedSecondary {
   margin-left: 10px;
@@ -220,7 +249,18 @@ span.MuiButton-label {
 .Comments-commentData-537 {
   width: 75% !important;
 }
+
+/*NEWS*/
+.article-source {
+  border: solid black 2px;
+}
+.article-url {
+  color: blue;
+}
 @media only screen and (max-width: 600px) {
+  .news-body-text {
+    padding: 10px;
+  }
   .like-comment {
     display: none;
   }
@@ -233,6 +273,17 @@ span.MuiButton-label {
     line-height: 1.5;
     border-top: 2px solid #e6ecf0;
     margin: 5px;
+  }
+  .news-wave-body {
+    padding: 5px;
+    line-height: 1.5;
+    border-top: 2px solid #e6ecf0;
+    margin: 5px;
+  }
+  .news-title-link {
+    text-align: center;
+    margin: 0 10px 10px 10px;
+    text-decoration: underline black;
   }
   button.MuiButtonBase-root.MuiIconButton-root {
     padding-top: 0;

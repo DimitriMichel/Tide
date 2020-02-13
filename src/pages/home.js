@@ -10,13 +10,6 @@ import News from "../API/News";
 class home extends Component {
   componentDidMount() {
     this.props.getWaves();
-    News.get("/v2/top-headlines", {
-      params: {
-        country: "us"
-      }
-    }).then(response => {
-      console.log(response);
-    });
   }
 
   render() {
