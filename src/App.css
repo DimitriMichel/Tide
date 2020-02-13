@@ -325,6 +325,7 @@ body {
     position: absolute;
     top: 6px;
     right: -5px;
+    z-index: 1000;
   }
   .close-wave {
     position: absolute;

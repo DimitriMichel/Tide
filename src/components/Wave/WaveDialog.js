@@ -76,8 +76,8 @@ class WaveDialog extends Component {
   };
   handleClose = () => {
     window.history.pushState(null, null, this.state.oldPath);
-    this.setState({ open: false });
     this.props.clearErrors();
+    this.setState({ open: false });
   };
   render() {
     const {
@@ -132,7 +132,7 @@ class WaveDialog extends Component {
             <AppButton style={{ width: "50px" }}>
               <ChatIcon color="secondary" size="small" />
             </AppButton>
-            <span style={{paddingLeft: "5px"}}>
+            <span style={{ paddingLeft: "5px" }}>
               {commentCount} <span className="like-comment">Comments</span>
             </span>
           </div>
