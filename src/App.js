@@ -30,8 +30,9 @@ const token = localStorage.FBIdToken;
 if (token) {
   const decodedToken = jwtDecode(token);
   // Set Token Expiry Window
-  if (decodedToken.exp * 1001 < Date.now()) {
+  if (decodedToken.exp * 1000 < Date.now()) {
     store.dispatch(logoutUser());
+    logoutUser();
     window.location.href = "/login";
   } else {
     store.dispatch({ type: SET_AUTHENTICATED });
