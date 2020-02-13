@@ -18,13 +18,14 @@ import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
 import user from "./pages/user";
-import news from "./pages/news"
+import news from "./pages/news";
 //COMPONENTS
 import Navbar from "./components/Structure/Navbar";
 import AuthRoute from "./util/AuthRoute";
 
 const theme = createMuiTheme(themeConfig);
-
+axios.defaults.baseURL =
+  "https://us-central1-theory-35917.cloudfunctions.net/api";
 const token = localStorage.FBIdToken;
 if (token) {
   const decodedToken = jwtDecode(token);
@@ -50,9 +51,13 @@ class App extends Component {
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
-                <Route exact path="/user/:handle" component={user}/>
-                <Route exact path="/user/:handle/wave/:waveID" component={user}/>
-                <Route exact path="/news" component={news}/>
+                <Route exact path="/user/:handle" component={user} />
+                <Route
+                  exact
+                  path="/user/:handle/wave/:waveID"
+                  component={user}
+                />
+                <Route exact path="/news" component={news} />
               </Switch>
             </Router>
           </div>
