@@ -48,19 +48,49 @@ class login extends Component {
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
+  // Select Random Demo User
+  /****************************/
+  randomIntFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+  demoUsers = [
+    "andrew@email.com",
+    "lucille@email.com",
+    "richard@email.com",
+    "pam@email.com"
+  ];
+
+  pickRandomUser = this.randomIntFromInterval(0, this.demoUsers.length - 1);
+
+  // Demo User Database
+  demoUserHash = {
+    "richard@email.com": "openup",
+    "lucille@email.com": "openup",
+    "pam@email.com": "openup",
+    "andrew@email.com": "openup"
+  };
+
+  // Use Random Demo User Function to target key in randomUserHash
+  demoUserEmail = this.demoUsers[this.pickRandomUser];
+  demoUserPassword = this.demoUserHash[this.demoUserEmail];
+
   handleDemoClick = event => {
     event.preventDefault();
     const userData = {
-      email: "andrew@email.com",
-      password: "openup"
+      email: this.demoUserEmail,
+      password: this.demoUserPassword
     };
     this.props.loginUser(userData, this.props.history);
   };
+  /****************************/
+
   render() {
     const {
       classes,
       UI: { loading }
     } = this.props;
+
     const { errors } = this.state;
     return (
       <Grid container className={classes.form}>
@@ -114,16 +144,15 @@ class login extends Component {
                 disabled={loading}
               >
                 LOGIN
-
               </Button>
               {loading && (
-                  <div className="spinner">
-                    <CircularProgress
-                        size={33}
-                        className="spinner"
-                        color="secondary"
-                    />
-                  </div>
+                <div className="spinner">
+                  <CircularProgress
+                    size={33}
+                    className="spinner"
+                    color="secondary"
+                  />
+                </div>
               )}
               <br />
               <Button
