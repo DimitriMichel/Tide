@@ -114,14 +114,17 @@ class login extends Component {
                 disabled={loading}
               >
                 LOGIN
-                {loading && (
-                  <CircularProgress
-                    size={33}
-                    className={classes.progress}
-                    color="secondary"
-                  />
-                )}
+
               </Button>
+              {loading && (
+                  <div className="spinner">
+                    <CircularProgress
+                        size={33}
+                        className="spinner"
+                        color="secondary"
+                    />
+                  </div>
+              )}
               <br />
               <Button
                 onClick={this.handleDemoClick}
@@ -132,13 +135,6 @@ class login extends Component {
                 disabled={loading}
               >
                 Demo
-                {loading && (
-                  <CircularProgress
-                    size={33}
-                    className={classes.progress}
-                    color="secondary"
-                  />
-                )}
               </Button>
               <div className={classes.formLink}>
                 <small className="signup-small">

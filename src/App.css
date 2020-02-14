@@ -18,7 +18,10 @@ body {
 .Button:hover {
   color: #ffff8d;
 }
-
+.spinner {
+  text-align: center;
+  margin: auto;
+}
 a {
   color: black;
   text-decoration: none;

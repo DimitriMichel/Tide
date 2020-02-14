@@ -136,9 +136,6 @@ class Profile extends Component {
         </Paper>
       ) : (
         <Paper className={classes.paper}>
-          <Typography variant="body2" align="center">
-            (Profile not found! Please log in again.)
-          </Typography>
           <div className={classes.buttons}>
             <Button
               variant="contained"
