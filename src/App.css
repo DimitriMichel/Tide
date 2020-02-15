@@ -424,10 +424,6 @@ body {
   justify-content: center;
   vertical-align: center;
 }
-.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-10 {
-  padding-left: 0;
-}
-
 .MuiCardContent-root {
   width: 100%;
   padding-right: 0;
