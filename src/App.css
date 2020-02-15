@@ -59,6 +59,20 @@ a:hover {
 body {
   background: white;
 }
+.spinnerDiv {
+text-align: center;
+margin-top: 50px;
+margin-bottom: 90%;
+}
+
+.spinnerDiv-profile {
+  text-align: center;
+  padding-top: 115px;
+  padding-bottom: 190px;
+  border: #e6ecf0 2px solid;
+  border-radius: 4px;
+}
+
 .wave-container {
   padding: 10px 0 0 24px;
 }

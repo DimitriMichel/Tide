@@ -4,13 +4,13 @@ import axios from "axios";
 import Wave from "../components/Wave/Wave";
 import { getUserData } from "../redux/actions/dataActions";
 import StaticProfile from "../components/Profile/StaticProfile";
-import WaveScaffolding from "../util/WaveScaffolding";
 
 //REDUX
 import { connect } from "react-redux";
 
 //MUI
 import Grid from "@material-ui/core/Grid";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class user extends Component {
   state = {
@@ -42,7 +42,9 @@ class user extends Component {
     const { waves, loading } = this.props.data;
     const { waveIDParam } = this.state;
     const waveMarkup = loading ? (
-      <WaveScaffolding />
+        <div className="spinnerDiv">
+            <CircularProgress size={100} thickness={1.5} color="secondary" />
+        </div>
     ) : waves === null ? (
       <p> No Waves From This User.</p>
     ) : !waveIDParam ? (

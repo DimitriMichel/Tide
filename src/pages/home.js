@@ -5,7 +5,7 @@ import Profile from "../components/Profile/Profile";
 import { connect } from "react-redux";
 import { getWaves } from "../redux/actions/dataActions";
 import PropTypes from "prop-types";
-import WaveScaffolding from "../util/WaveScaffolding";
+import CircularProgress from "@material-ui/core/CircularProgress";
 class home extends Component {
   componentDidMount() {
     this.props.getWaves();
@@ -16,7 +16,9 @@ class home extends Component {
     let recentWaves = !loading ? (
       waves.map(wave => <Wave key={wave.waveID} wave={wave} />)
     ) : (
-      <WaveScaffolding />
+      <div className="spinnerDiv">
+        <CircularProgress size={100} thickness={1.5} color="secondary" />
+      </div>
     );
 
     return (

@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Link from "react-router-dom/Link";
 import dayjs from "dayjs";
-import ProfileScaffolding from "../../util/ProfileScaffolding";
 
 //MATERIAL UI
 import Avatar from "@material-ui/core/Avatar";
@@ -23,6 +22,7 @@ import EditDetails from "./EditDetails";
 //REDUX
 import { connect } from "react-redux";
 import { logoutUser, uploadImage } from "../../redux/actions/userActions";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const styles = theme => ({
   ...theme.spreadTheme
@@ -159,7 +159,9 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <ProfileScaffolding />
+        <div className="spinnerDiv-profile">
+          <CircularProgress size={100} thickness={1.5} color="secondary" />
+        </div>
     );
     return profileMarkup;
   }
