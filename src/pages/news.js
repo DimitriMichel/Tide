@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import News from "../API/News";
 import Profile from "../components/Profile/Profile";
-import imageLinkContainer from "../util/NewsImageLinks"
+import imageLinkContainer from "../util/NewsImageLinks";
 //MUI
 import Avatar from "@material-ui/core/Avatar";
 import CardContent from "@material-ui/core/CardContent";
@@ -36,17 +36,21 @@ const styles = {
 };
 class news extends Component {
   state = {
-    articlesList: []
+    articlesList: [],
+    techArticlesList: []
   };
   //US News Top Headlines
   componentDidMount() {
     News.get("/v2/top-headlines", {
       params: {
-        country: "us"
+        country: "us",
+        pageSize: 25
       }
-    }).then(response => {
-      this.setState({ articlesList: response.data.articles });
-    });
+    })
+      .then(response => {
+        this.setState({ articlesList: response.data.articles });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -71,7 +75,8 @@ class news extends Component {
               }}
             >
               {this.state.articlesList.map(article => {
-                //Create Cards with API
+                //Remove "-" and following characters in article titles.
+                //ex.(The world is ending - CNN) -> (The world is ending).
                 const articleTitle = article.title.substring(
                   0,
                   article.title.lastIndexOf("-")
@@ -82,9 +87,11 @@ class news extends Component {
 
                 //Dummy News Logos
                 let newsLogo;
-                if (imageLinkContainer[article.source.name]){
+                if (imageLinkContainer[article.source.name]) {
                   newsLogo = imageLinkContainer[article.source.name];
-                } else newsLogo = "https://cdn1.vectorstock.com/i/thumb-large/39/10/world-news-flat-icon-news-symbol-logo-vector-20093910.jpg";
+                } else
+                  newsLogo =
+                    "https://cdn1.vectorstock.com/i/thumb-large/39/10/world-news-flat-icon-news-symbol-logo-vector-20093910.jpg";
 
                 return (
                   <div>

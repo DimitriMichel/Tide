@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
-
 //Material UI Imports
 import Typography from "@material-ui/core/Typography";
 import { CircularProgress } from "@material-ui/core";
@@ -69,7 +68,11 @@ class signup extends Component {
             alt="App Icon"
           />
 
-          <form noValidate onSubmit={this.handleSubmit} className={classes.formContainer}>
+          <form
+            noValidate
+            onSubmit={this.handleSubmit}
+            className={classes.formContainer}
+          >
             <TextField
               fullWidth
               id="email"
@@ -145,9 +148,9 @@ class signup extends Component {
             </Button>
             <br />
             <div className={classes.formLink}>
-            <small >
-              <Link to="/login">Already have an account?</Link>
-            </small>
+              <small>
+                <Link to="/login">Already have an account?</Link>
+              </small>
             </div>
           </form>
         </Grid>

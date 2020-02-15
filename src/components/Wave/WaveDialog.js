@@ -132,7 +132,7 @@ class WaveDialog extends Component {
             <AppButton style={{ width: "50px" }}>
               <ChatIcon color="secondary" size="small" />
             </AppButton>
-            <span style={{ paddingLeft: "5px" }}>
+            <span>
               {commentCount} <span className="like-comment">Comments</span>
             </span>
           </div>

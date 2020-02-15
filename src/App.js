@@ -19,6 +19,7 @@ import login from "./pages/login";
 import signup from "./pages/signup";
 import user from "./pages/user";
 import news from "./pages/news";
+
 //COMPONENTS
 import Navbar from "./components/Structure/Navbar";
 import AuthRoute from "./util/AuthRoute";

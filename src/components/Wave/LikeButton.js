@@ -43,7 +43,7 @@ export class LikeButton extends Component {
         <FavoriteIcon color="primary" />
       </AppButton>
     ) : (
-        //Third: if Wave is not like user will be able to like the wave.
+        //Third: if Wave is not liked user will be able to like the wave.
       <AppButton tip="Like" onClick={this.likeWave}>
         <FavoriteBorder color="primary" />
       </AppButton>
