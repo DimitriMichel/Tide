@@ -34,7 +34,7 @@ export const imageLinkContainer = {
   "Marketwatch.com":
     "https://pbs.twimg.com/profile_images/705601245596090368/Z6xUOnRg_400x400.jpg",
   "NBC News":
-    "https://pbs.twimg.com/profile_images/1226931167472959488/gy-19Sox_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1108426393287868423/CyLn5GVQ_400x400.png",
   "Nypost.com":
     "https://pbs.twimg.com/profile_images/966372680306868224/60wfGe9e_400x400.jpg",
   "Avclub.com":
@@ -78,6 +78,20 @@ export const imageLinkContainer = {
   "Thedailybeast.com":
     "https://pbs.twimg.com/profile_images/1002604032903524352/46h0aSgT_400x400.jpg",
   "Coindesk.com":
-    "https://pbs.twimg.com/profile_images/875399204218126339/W3zmmuWz_400x400.jpg"
+    "https://pbs.twimg.com/profile_images/875399204218126339/W3zmmuWz_400x400.jpg",
+  "9to5google.com":
+      "https://pbs.twimg.com/profile_images/660091855749709824/QptU2fea_400x400.jpg",
+  "Axios":
+      "https://pbs.twimg.com/profile_images/1184549937247330304/mRBhigcY_400x400.jpg",
+  "Yahoo.com":
+      "https://pbs.twimg.com/profile_images/1176104565797769218/IVKrGKC2_400x400.png",
+  "Androidpolice.com":
+      "https://pbs.twimg.com/profile_images/563109834988335104/mYPfSB_b_400x400.png",
+  "Cosmopolitian.com":
+      "https://pbs.twimg.com/profile_images/1215403557110931456/IolppCIm_400x400.jpg",
+  "Businesswire.com":
+      "https://pbs.twimg.com/profile_images/1055073686040928256/UsXmPq0U_400x400.jpg",
+  "Thefederalist.com":
+      "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg"
 };
 export default imageLinkContainer;
