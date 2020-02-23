@@ -17,6 +17,10 @@ export default {
     form: {
       textAlign: "center"
     },
+    formFix: {
+      textAlign: "center",
+      paddingRight: 30
+    },
     avatar: {
       width: 100,
       height: 100
@@ -51,6 +55,10 @@ export default {
     formContainer: {
       paddingLeft: "20px",
       paddingRight: "20px"
+    },
+    formContainerFix: {
+      paddingLeft: "20px",
+      paddingRight: "40px"
     },
     formLink: {
       paddingTop: "10px",

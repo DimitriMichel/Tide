@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 
@@ -93,88 +93,95 @@ class login extends Component {
 
     const { errors } = this.state;
     return (
-      <Grid container className={classes.form}>
-        <Grid item sm />
-        <Grid item sm>
-          <img
-            src={require("./images/tide2.png")}
-            className={classes.image}
-            alt="App Icon"
-          />
-          <div className={classes.formContainer}>
-            <form noValidate onSubmit={this.handleSubmit}>
-              <TextField
-                fullWidth
-                color="secondary"
-                id="email"
-                name="email"
-                variant="outlined"
-                type="email"
-                label="Email"
-                helperText={errors.email}
-                error={errors.email ? true : false}
-                className={classes.textField}
-                value={this.state.email}
-                onChange={this.handleChange}
+      <Fragment>
+        <div className="background">
+          <Grid container className={classes.formFix}>
+            <Grid item sm />
+            <Grid item sm>
+              <img
+                src={require("./images/tide2.png")}
+                className={classes.image}
+                alt="App Icon"
               />
-              <TextField
-                fullWidth
-                color="secondary"
-                id="password"
-                name="password"
-                variant="outlined"
-                type="password"
-                label="Password"
-                helperText={errors.password}
-                error={errors.password ? true : false}
-                className={classes.textField}
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-              {errors.general && (
-                <Typography variant="body2" className={classes.credentialError}>
-                  {errors.general}
-                </Typography>
-              )}
-              <Button
-                type="submit"
-                variant="contained"
-                color="secondary"
-                className={classes.button}
-                disabled={loading}
-              >
-                LOGIN
-              </Button>
-              {loading && (
-                <div className="spinner">
-                  <CircularProgress
-                    size={33}
-                    className="spinner"
+              <div className={classes.formContainer}>
+                <form noValidate onSubmit={this.handleSubmit}>
+                  <TextField
+                    fullWidth
                     color="secondary"
+                    id="email"
+                    name="email"
+                    variant="outlined"
+                    type="email"
+                    label="Email"
+                    helperText={errors.email}
+                    error={errors.email ? true : false}
+                    className={classes.textField}
+                    value={this.state.email}
+                    onChange={this.handleChange}
                   />
-                </div>
-              )}
-              <br />
-              <Button
-                onClick={this.handleDemoClick}
-                type="submit"
-                variant="contained"
-                color="secondary"
-                className={classes.button}
-                disabled={loading}
-              >
-                Demo
-              </Button>
-              <div className={classes.formLink}>
-                <small className="signup-small">
-                  <Link to="/signup">Sign up today! </Link>
-                </small>
+                  <TextField
+                    fullWidth
+                    color="secondary"
+                    id="password"
+                    name="password"
+                    variant="outlined"
+                    type="password"
+                    label="Password"
+                    helperText={errors.password}
+                    error={errors.password ? true : false}
+                    className={classes.textField}
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                  {errors.general && (
+                    <Typography
+                      variant="body2"
+                      className={classes.credentialError}
+                    >
+                      {errors.general}
+                    </Typography>
+                  )}
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    disabled={loading}
+                  >
+                    Login
+                  </Button>
+                  {loading && (
+                    <div className="spinner">
+                      <CircularProgress
+                        size={33}
+                        className="spinner"
+                        color="secondary"
+                      />
+                    </div>
+                  )}
+                  <br />
+                  <Button
+                    onClick={this.handleDemoClick}
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    disabled={loading}
+                  >
+                    Demo
+                  </Button>
+                  <div className={classes.formLink}>
+                    <small className="signup-small">
+                      <Link to="/signup">Sign up today! </Link>
+                    </small>
+                  </div>
+                </form>
               </div>
-            </form>
-          </div>
-        </Grid>
-        <Grid item sm />
-      </Grid>
+            </Grid>
+            <Grid item sm />{" "}
+          </Grid>
+        </div>
+      </Fragment>
     );
   }
 }

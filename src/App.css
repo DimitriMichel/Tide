@@ -7,7 +7,9 @@ body {
   background-color: #fff;
   border-radius: 4px;
 }
-
+.MuiTypography-body1{
+  font-family: "Helvetica Neue", sans-serif !important;
+}
 .app-bar {
   background-color: #fff !important;
   box-shadow: none !important;
@@ -239,6 +241,21 @@ margin-bottom: 90%;
   width: 29%;
 }
 
+.background{
+height: 100vh;
+  width: 100vw;
+position: absolute;
+  background-image: url("./pages/images/bg.png");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-formContainer-90{
+  padding-right: 40px !important;
+}
+
 /*DESKTOP*/
 
 @media only screen and (min-width: 1024px) {
@@ -452,3 +469,4 @@ margin-bottom: 90%;
   padding: 5px !important;
   height: 40px;
 }
+

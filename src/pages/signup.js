@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 //Material UI Imports
@@ -59,7 +59,9 @@ class signup extends Component {
     } = this.props;
     const { errors } = this.state;
     return (
-      <Grid container className={classes.form}>
+        <Fragment>
+          <div className="background">
+      <Grid container className={classes.formFix}>
         <Grid item sm />
         <Grid item sm>
           <img
@@ -156,6 +158,8 @@ class signup extends Component {
         </Grid>
         <Grid item sm />
       </Grid>
+          </div>
+        </Fragment>
     );
   }
 }

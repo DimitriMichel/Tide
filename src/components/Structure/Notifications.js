@@ -18,6 +18,7 @@ import ChatIcon from "@material-ui/icons/Chat";
 import { connect } from "react-redux";
 import { markNotificationsRead } from "../../redux/actions/userActions";
 
+
 class Notifications extends Component {
   state = {
     anchorEl: null
@@ -30,7 +31,7 @@ class Notifications extends Component {
   };
   onMenuOpened = () => {
     let unreadNotificationsIds = this.props.notifications
-      .filter(not => !not.read)
+        .filter((not) => !not.read)
       .map(not => not.notificationId);
     this.props.markNotificationsRead(unreadNotificationsIds);
   };
@@ -43,7 +44,7 @@ class Notifications extends Component {
     let notificationsIcon;
     if (notifications && notifications.length > 0) {
       notifications.filter(not => not.read === false).length > 0
-        ? (notificationsIcon = <NotificationsIcon color="secondary" />)
+        ? (notificationsIcon = <NotificationsIcon color="primary" />)
         : (notificationsIcon = <NotificationsIcon color="secondary" />);
     } else {
       notificationsIcon = <NotificationsIcon />;

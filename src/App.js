@@ -50,8 +50,8 @@ class App extends Component {
             <Router>
               <Navbar />
               <Switch>
-                <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login} />
+                <Route exact path="/" component={home} />
                 <AuthRoute exact path="/signup" component={signup} />
                 <Route exact path="/user/:handle" component={user} />
                 <Route

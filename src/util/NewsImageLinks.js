@@ -80,18 +80,26 @@ export const imageLinkContainer = {
   "Coindesk.com":
     "https://pbs.twimg.com/profile_images/875399204218126339/W3zmmuWz_400x400.jpg",
   "9to5google.com":
-      "https://pbs.twimg.com/profile_images/660091855749709824/QptU2fea_400x400.jpg",
-  "Axios":
-      "https://pbs.twimg.com/profile_images/1184549937247330304/mRBhigcY_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/660091855749709824/QptU2fea_400x400.jpg",
+  Axios:
+    "https://pbs.twimg.com/profile_images/1184549937247330304/mRBhigcY_400x400.jpg",
   "Yahoo.com":
-      "https://pbs.twimg.com/profile_images/1176104565797769218/IVKrGKC2_400x400.png",
+    "https://pbs.twimg.com/profile_images/1176104565797769218/IVKrGKC2_400x400.png",
   "Androidpolice.com":
-      "https://pbs.twimg.com/profile_images/563109834988335104/mYPfSB_b_400x400.png",
+    "https://pbs.twimg.com/profile_images/563109834988335104/mYPfSB_b_400x400.png",
   "Cosmopolitian.com":
-      "https://pbs.twimg.com/profile_images/1215403557110931456/IolppCIm_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1215403557110931456/IolppCIm_400x400.jpg",
   "Businesswire.com":
-      "https://pbs.twimg.com/profile_images/1055073686040928256/UsXmPq0U_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1055073686040928256/UsXmPq0U_400x400.jpg",
   "Thefederalist.com":
-      "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg"
+    "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg",
+  "Investing.com":
+    "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg",
+  "Associated Press":
+    "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg",
+  "Forbes.com":
+    "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg",
+  "Androidauthority.com":
+    "https://pbs.twimg.com/profile_images/875400955243581440/za3l71Gt_400x400.jpg"
 };
 export default imageLinkContainer;
