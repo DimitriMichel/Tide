@@ -1,14 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html,
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica Neue", sans-serif !important;
 }
 .App {
   background-color: #fff;
   border-radius: 4px;
 }
+.MuiInputBase-input{
+  font-family: "Helvetica Neue", sans-serif !important;
+}
 .MuiTypography-body1{
   font-family: "Helvetica Neue", sans-serif !important;
+}
+.MuiTypography-body2{
+    font-family: "Helvetica Neue", sans-serif !important;
+  }
+.MuiTypography-h5{
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 20px !important;
+}
+.MuiTypography-h6{
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 22px !important;
+}
+.MuiInputBase-inputMultiline {
+  height: 20px !important;
+  resize: none;
+  padding: 0;
 }
 .app-bar {
   background-color: #fff !important;

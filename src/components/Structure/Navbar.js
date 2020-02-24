@@ -6,12 +6,17 @@ import AppButton from "../../util/AppButton";
 import PostWave from "../Wave/PostWave";
 import Notifications from "./Notifications"
 
+//Icons
+import { AiOutlineLogin } from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
+import { AiOutlineUserAdd } from "react-icons/ai";
+
+
 //MATERIAL UI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
-import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import AssignmentRoundedIcon from "@material-ui/icons/AssignmentRounded";
 import HomeIcon from "@material-ui/icons/Home";
 import RssFeedIcon from "@material-ui/icons/RssFeed";
@@ -26,7 +31,7 @@ class Navbar extends Component {
             <Fragment>
               <Link to="/">
                 <AppButton tip="Home">
-                  <HomeIcon color="secondary" />
+                  <AiFillHome style={{color: "#043F66"}} />
                 </AppButton>
               </Link>
               <PostWave />
@@ -41,7 +46,7 @@ class Navbar extends Component {
             <Fragment>
               <span className="parent-span">
                 <Button component={Link} to="/login">
-                  <ExitToAppRoundedIcon
+                  <AiOutlineLogin size={30}
                     style={{ paddingRight: 2, color: "#043F66" }}
                   />
                   Login
@@ -49,7 +54,7 @@ class Navbar extends Component {
               </span>
               <span className="parent-span">
                 <Button component={Link} to="/">
-                  <HomeRoundedIcon
+                  <AiOutlineHome size={30}
                     style={{ paddingRight: 2, color: "#043F66" }}
                   />
                   Home
@@ -57,7 +62,7 @@ class Navbar extends Component {
               </span>
               <span className="parent-span">
                 <Button component={Link} to="/signup">
-                  <AssignmentRoundedIcon
+                  <AiOutlineUserAdd size={30}
                     style={{ paddingRight: 2, color: "#043F66" }}
                   />
                   Sign Up

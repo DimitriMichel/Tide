@@ -29,11 +29,9 @@ class user extends Component {
     axios
       .get(`/user/${handle}`)
       .then(response => {
-        console.log(response);
         this.setState({
           profile: response.data.user
         });
-        console.log(response);
       })
       .catch(err => console.log(err));
   }

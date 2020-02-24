@@ -2,6 +2,8 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Link from "react-router-dom/Link";
 import dayjs from "dayjs";
+import { AiOutlineLogout } from "react-icons/ai";
+
 
 //MATERIAL UI
 import Avatar from "@material-ui/core/Avatar";
@@ -16,7 +18,6 @@ import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Face";
-import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 import EditDetails from "./EditDetails";
 
 //REDUX
@@ -118,7 +119,7 @@ class Profile extends Component {
               <div className="profile-buttons-container">
                 <Tooltip title="Logout" placement="top">
                   <IconButton onClick={this.handleLogout} color="secondary">
-                    <KeyboardReturn color="secondary" />
+                    <AiOutlineLogout color="secondary" />
                   </IconButton>
                 </Tooltip>
                 <EditDetails />
@@ -135,7 +136,7 @@ class Profile extends Component {
           </div>
         </Paper>
       ) : (
-        <Paper className={classes.paper}>
+        <Paper className={classes.paperNoAuth}>
           <div className={classes.buttons}>
             <Button
               variant="contained"
@@ -159,9 +160,9 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-        <div className="spinnerDiv-profile">
-          <CircularProgress size={100} thickness={1.5} color="secondary" />
-        </div>
+      <div className="spinnerDiv-profile">
+        <CircularProgress size={100} thickness={1.5} color="secondary" />
+      </div>
     );
     return profileMarkup;
   }

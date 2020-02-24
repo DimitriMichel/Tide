@@ -24,12 +24,11 @@ export default {
     avatar: {
       width: 100,
       height: 100
-
     },
-    waveAvatar:{
+    waveAvatar: {
       width: 100,
       height: 100,
-      display: "inline",
+      display: "inline"
     },
     image: {
       margin: "5px auto 5px auto",
@@ -41,9 +40,11 @@ export default {
     },
     button: {
       margin: "10px",
+      borderRadius: "30px",
       boxShadow: "none !important",
       position: "relative",
-      color: "white"
+      color: "white",
+      padding: "5px 40px"
     },
     credentialError: {
       color: "red",
@@ -70,6 +71,10 @@ export default {
       borderStyle: "solid",
       borderWidth: "2px",
       borderColor: "#E6ECF0"
+    },
+    paperNoAuth: {
+      padding: 10,
+      boxShadow: "none !important"
     },
     profileAvatar: {
       textAlign: "center",
@@ -118,6 +123,9 @@ export default {
         margin: "20px 10px",
         boxShadow: "none !important"
       }
+    },
+    submitButton: {
+      color: "white"
     }
   }
 };

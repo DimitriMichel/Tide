@@ -94,7 +94,7 @@ class PostWave extends Component {
                 label=""
                 multiline
                 rows="3"
-                placeholder="Wave"
+                placeholder="What's on your mind?"
                 error={errors.body ? true : false}
                 helperText={errors.body}
                 className={classes.textField}
@@ -104,9 +104,10 @@ class PostWave extends Component {
               <Button
                 type="submit"
                 variant="contained"
-                color="primary"
+                color="secondary"
                 className={classes.submitButton}
                 disabled={loading}
+                style={{color: "white", marginBottom: "15px"}}
               >
                 Submit
                 {loading && (

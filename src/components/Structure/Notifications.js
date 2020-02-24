@@ -13,11 +13,10 @@ import Typography from "@material-ui/core/Typography";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ChatIcon from "@material-ui/icons/Chat";
-
+import Badge from "@material-ui/core/Badge";
 //Redux
 import { connect } from "react-redux";
 import { markNotificationsRead } from "../../redux/actions/userActions";
-
 
 class Notifications extends Component {
   state = {
@@ -31,21 +30,30 @@ class Notifications extends Component {
   };
   onMenuOpened = () => {
     let unreadNotificationsIds = this.props.notifications
-        .filter((not) => !not.read)
-      .map(not => not.notificationId);
+      .filter(not => !not.read)
+      .map(not => not.notificationID);
     this.props.markNotificationsRead(unreadNotificationsIds);
   };
+
   render() {
     const notifications = this.props.notifications;
     const anchorEl = this.state.anchorEl;
-
     dayjs.extend(relativeTime);
-
     let notificationsIcon;
+
     if (notifications && notifications.length > 0) {
       notifications.filter(not => not.read === false).length > 0
-        ? (notificationsIcon = <NotificationsIcon color="primary" />)
-        : (notificationsIcon = <NotificationsIcon color="secondary" />);
+          ? (notificationsIcon = (
+              <Badge
+                  badgeContent={
+                      notifications.filter((not) => not.read === false).length
+                  }
+                  color="primary"
+              >
+                  <NotificationsIcon color="secondary" />
+              </Badge>
+          ))
+          : (notificationsIcon = <NotificationsIcon color="secondary" />);
     } else {
       notificationsIcon = <NotificationsIcon />;
     }

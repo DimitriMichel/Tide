@@ -35,8 +35,6 @@ class CommentForm extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log(this.state.body);
     this.props.submitComment(this.props.waveID, { body: this.state.body });
 
   };
@@ -44,7 +42,6 @@ class CommentForm extends Component {
   render() {
     const { authenticated } = this.props;
     const errors = this.state.errors;
-    console.log(this.props);
     const commentFormMarkup = authenticated ? (
         <div className="comment-form-container">
           <Grid item sm={12} style={{ textAlign: "center" }}>

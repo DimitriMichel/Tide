@@ -54,9 +54,9 @@ export const signupUser = (newUserData, history) => dispatch => {
 export const markNotificationsRead = notificationIds => dispatch => {
   axios
     .post("/notifications", notificationIds)
-    .then(res => {
+    .then(() => {
       dispatch({
-        type: MARK_NOTIFICATIONS_READ
+        type: MARK_NOTIFICATIONS_READ,
       });
     })
     .catch(err => console.log(err));

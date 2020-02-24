@@ -154,6 +154,11 @@ class signup extends Component {
                 <Link to="/login">Already have an account?</Link>
               </small>
             </div>
+            <div className={classes.formLink}>
+              <small>
+                <Link to="/">Want to use a Demo account?</Link>
+              </small>
+            </div>
           </form>
         </Grid>
         <Grid item sm />
