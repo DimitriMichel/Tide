@@ -28,7 +28,7 @@ Social Media Application Created With:
 | :------------------------------------------: | :------------------------------------------: | :------------------------------------------: 
 | <img src="https://i.imgur.com/YGJ08UD.png"/> | <img src="https://i.imgur.com/rN7oDfi.png"/> | <img src="https://i.imgur.com/wQFmjfz.png"/>
 
-|        Edit User Details                     |            User "Wave" Feed                  |        Edit User Details                    | 
+|        Edit User Details                     |            User "Wave" Feed                  |        Current News Page                    | 
 | :------------------------------------------: | :------------------------------------------: |:------------------------------------------: |
 | <img src="https://i.imgur.com/wQFmjfz.png"/> | <img src="https://i.imgur.com/uXiNXzq.png"/> |  <img src="https://i.imgur.com/ISFVSv0.png"/>|
 <br/>
