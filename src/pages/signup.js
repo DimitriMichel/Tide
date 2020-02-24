@@ -156,7 +156,7 @@ class signup extends Component {
             </div>
             <div className={classes.formLink}>
               <small>
-                <Link to="/">Want to use a Demo account?</Link>
+                <Link to="/login">Want to use a Demo account?</Link>
               </small>
             </div>
           </form>
