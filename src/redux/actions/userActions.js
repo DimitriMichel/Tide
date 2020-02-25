@@ -68,7 +68,7 @@ export const logoutUser = () => dispatch => {
   dispatch({ type: SET_UNAUTHENTICATED });
 };
 
-//Set User Global state from api data
+//Set User Redux state from api
 export const getUserData = () => dispatch => {
   dispatch({ type: LOADING_USER });
   axios
