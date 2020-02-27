@@ -36,8 +36,7 @@ const styles = {
 };
 class news extends Component {
   state = {
-    articlesList: [],
-    techArticlesList: []
+    articlesList: []
   };
   //US News Top Headlines
   componentDidMount() {
@@ -54,6 +53,10 @@ class news extends Component {
   }
 
   render() {
+
+
+
+
     const { classes } = this.props;
     return (
       <div className="container">

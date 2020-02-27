@@ -17,10 +17,10 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import AssignmentRoundedIcon from "@material-ui/icons/AssignmentRounded";
-import HomeIcon from "@material-ui/icons/Home";
 import RssFeedIcon from "@material-ui/icons/RssFeed";
-//REDUX
+
+
+
 class Navbar extends Component {
   render() {
     const { authenticated } = this.props;
