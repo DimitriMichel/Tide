@@ -59,112 +59,119 @@ class signup extends Component {
     } = this.props;
     const { errors } = this.state;
     return (
-        <Fragment>
-          <div className="background">
-      <Grid container className={classes.formFix}>
-        <Grid item sm />
-        <Grid item sm>
-          <img
-            src={require("./images/tide2.png")}
-            className={classes.image}
-            alt="App Icon"
-          />
+      <Fragment>
+        <div className="background">
+          <Grid container className={classes.formFix}>
+            <Grid item sm />
+            <Grid item sm>
+              <img
+                src={require("./images/tide2.png")}
+                className={classes.image}
+                alt="App Icon"
+              />
 
-          <form
-            noValidate
-            onSubmit={this.handleSubmit}
-            className={classes.formContainer}
-          >
-            <TextField
-              fullWidth
-              id="email"
-              name="email"
-              variant="outlined"
-              type="email"
-              label="Email"
-              helperText={errors.email}
-              error={errors.email ? true : false}
-              className={classes.textField}
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            <TextField
-              fullWidth
-              id="password"
-              name="password"
-              variant="outlined"
-              type="password"
-              label="Password"
-              helperText={errors.password}
-              error={errors.password ? true : false}
-              className={classes.textField}
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <TextField
-              fullWidth
-              id="confirmPassword"
-              name="confirmPassword"
-              variant="outlined"
-              type="confirmPassword"
-              label="Confirm Password"
-              helperText={errors.confirmPassword}
-              error={errors.confirmPassword ? true : false}
-              className={classes.textField}
-              value={this.state.confirmPassword}
-              onChange={this.handleChange}
-            />
-            <TextField
-              fullWidth
-              id="handle"
-              name="handle"
-              variant="outlined"
-              type="text"
-              label="Username"
-              helperText={errors.handle}
-              error={errors.handle ? true : false}
-              className={classes.textField}
-              value={this.state.handle}
-              onChange={this.handleChange}
-            />
-            {errors.general && (
-              <Typography variant="body2" className={classes.credentialError}>
-                {errors.general}
-              </Typography>
-            )}
-            <Button
-              type="submit"
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              disabled={loading}
-            >
-              Sign Up
-              {loading && (
-                <CircularProgress
-                  size={33}
-                  className={classes.progress}
+              <form
+                noValidate
+                onSubmit={this.handleSubmit}
+                className={classes.formContainer}
+              >
+                <TextField
+                  fullWidth
                   color="secondary"
+                  id="email"
+                  name="email"
+                  variant="outlined"
+                  type="email"
+                  label="Email"
+                  helperText={errors.email}
+                  error={errors.email ? true : false}
+                  className={classes.textField}
+                  value={this.state.email}
+                  onChange={this.handleChange}
                 />
-              )}
-            </Button>
-            <br />
-            <div className={classes.formLink}>
-              <small>
-                <Link to="/login">Already have an account?</Link>
-              </small>
-            </div>
-            <div className={classes.formLink}>
-              <small>
-                <Link to="/login">Want to use a Demo account?</Link>
-              </small>
-            </div>
-          </form>
-        </Grid>
-        <Grid item sm />
-      </Grid>
-          </div>
-        </Fragment>
+                <TextField
+                  fullWidth
+                  color="secondary"
+                  id="password"
+                  name="password"
+                  variant="outlined"
+                  type="password"
+                  label="Password"
+                  helperText={errors.password}
+                  error={errors.password ? true : false}
+                  className={classes.textField}
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  fullWidth
+                  color="secondary"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  variant="outlined"
+                  type="confirmPassword"
+                  label="Confirm Password"
+                  helperText={errors.confirmPassword}
+                  error={errors.confirmPassword ? true : false}
+                  className={classes.textField}
+                  value={this.state.confirmPassword}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  fullWidth
+                  color="secondary"
+                  id="handle"
+                  name="handle"
+                  variant="outlined"
+                  type="text"
+                  label="Username"
+                  helperText={errors.handle}
+                  error={errors.handle ? true : false}
+                  className={classes.textField}
+                  value={this.state.handle}
+                  onChange={this.handleChange}
+                />
+                {errors.general && (
+                  <Typography
+                    variant="body2"
+                    className={classes.credentialError}
+                  >
+                    {errors.general}
+                  </Typography>
+                )}
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="secondary"
+                  className={classes.button}
+                  disabled={loading}
+                >
+                  Sign Up
+                  {loading && (
+                    <CircularProgress
+                      size={33}
+                      className={classes.progress}
+                      color="secondary"
+                    />
+                  )}
+                </Button>
+                <br />
+                <div className={classes.formLink}>
+                  <small>
+                    <Link to="/login">Already have an account?</Link>
+                  </small>
+                </div>
+                <div className={classes.formLink}>
+                  <small>
+                    <Link to="/login">Want to use a Demo account?</Link>
+                  </small>
+                </div>
+              </form>
+            </Grid>
+            <Grid item sm />
+          </Grid>
+        </div>
+      </Fragment>
     );
   }
 }
