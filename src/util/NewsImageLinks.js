@@ -108,6 +108,18 @@ export const imageLinkContainer = {
   "Macrumors.com":
       "https://pbs.twimg.com/profile_images/1171574992821194752/rVrN8JVA_400x400.jpg",
   "Financial Times":
-      "https://pbs.twimg.com/profile_images/931161479398686721/FI3te2Sw_400x400.jpg"
+      "https://pbs.twimg.com/profile_images/931161479398686721/FI3te2Sw_400x400.jpg",
+  "Latimes.com":
+      "https://pbs.twimg.com/profile_images/1171581672074043393/XNqsW9EE_400x400.jpg",
+  "Investors.com":
+      "https://pbs.twimg.com/profile_images/929121870107918336/gO-6qGSu_400x400.jpg",
+  "Cheatsheet.com":
+      "https://pbs.twimg.com/profile_images/1130892025124016129/TdyMzxsQ_400x400.png",
+  "Androidauthority.com":
+      "https://pbs.twimg.com/profile_images/831334194525528064/2NlMZ5ln_400x400.jpg",
+  "Dailymail.co.uk":
+      "https://pbs.twimg.com/profile_images/1194268540058193927/ca-uOgq6_400x400.png",
+  "Cbs42.com":
+      "https://pbs.twimg.com/profile_images/1219674270118354944/n6dQfgkZ_400x400.jpg"
 };
 export default imageLinkContainer;
