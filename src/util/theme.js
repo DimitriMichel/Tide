@@ -19,7 +19,7 @@ export default {
     },
     formFix: {
       textAlign: "center",
-      paddingRight: 30
+      paddingRight: 13
     },
     avatar: {
       width: 100,

@@ -2,6 +2,8 @@
 html,
 body {
   font-family: "Helvetica Neue", sans-serif !important;
+  width: 98.7%;
+  margin-right: 0;
 }
 .App {
   background-color: #fff;
