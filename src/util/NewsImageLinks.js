@@ -120,6 +120,22 @@ export const imageLinkContainer = {
   "Dailymail.co.uk":
       "https://pbs.twimg.com/profile_images/1194268540058193927/ca-uOgq6_400x400.png",
   "Cbs42.com":
-      "https://pbs.twimg.com/profile_images/1219674270118354944/n6dQfgkZ_400x400.jpg"
+      "https://pbs.twimg.com/profile_images/1219674270118354944/n6dQfgkZ_400x400.jpg",
+  "Newsweek":
+      "https://pbs.twimg.com/profile_images/741603495929905152/di0NxkFa_400x400.jpg",
+  "Nbcsports.com":
+      "https://pbs.twimg.com/profile_images/1212454551061549056/NUfsmwZX_400x400.jpg",
+  "Tmz.com":
+      "https://pbs.twimg.com/profile_images/948698715220410368/EkNILtvi_400x400.jpg",
+  "Pagesix.com":
+      "https://pbs.twimg.com/profile_images/966373011875090439/4InOFhcn_400x400.jpg",
+  "MSNBC":
+      "https://pbs.twimg.com/profile_images/988382060443250689/DijesdNB_400x400.jpg",
+  "Washingtonexaminer.com":
+      "https://pbs.twimg.com/profile_images/1049003685639081986/zX2rN7zN_400x400.jpg",
+  "247sports.com":
+      "https://pbs.twimg.com/profile_images/728641966850879488/GWbvB3Zf_400x400.jpg"
+
+
 };
 export default imageLinkContainer;

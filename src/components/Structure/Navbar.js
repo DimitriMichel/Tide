@@ -7,17 +7,15 @@ import PostWave from "../Wave/PostWave";
 import Notifications from "./Notifications"
 
 //Icons
-import { AiOutlineLogin } from "react-icons/ai";
-import { AiOutlineHome } from "react-icons/ai";
-import { AiFillHome } from "react-icons/ai";
-import { AiOutlineUserAdd } from "react-icons/ai";
-
+import {TiHome} from "react-icons/ti";
+import {IoMdLogIn} from "react-icons/io";
+import {TiUserAdd} from "react-icons/ti";
+import {TiRss} from "react-icons/ti";
 
 //MATERIAL UI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import RssFeedIcon from "@material-ui/icons/RssFeed";
 
 
 
@@ -31,14 +29,14 @@ class Navbar extends Component {
             <Fragment>
               <Link to="/">
                 <AppButton tip="Home">
-                  <AiFillHome style={{color: "#043F66"}} />
+                  <TiHome size={32} style={{color: "#043F66"}} />
                 </AppButton>
               </Link>
-              <PostWave />
+              <PostWave color="secondary" />
                 <Notifications color="secondary" />
               <Link to="/news">
                 <AppButton tip="News">
-                  <RssFeedIcon color="secondary" />
+                  <TiRss style={{color: "#043F66"}} size={32} />
                 </AppButton>
               </Link>
             </Fragment>
@@ -46,7 +44,7 @@ class Navbar extends Component {
             <Fragment>
               <span className="parent-span">
                 <Button component={Link} to="/login">
-                  <AiOutlineLogin size={30}
+                  <IoMdLogIn size={30}
                     style={{ paddingRight: 2, color: "#043F66" }}
                   />
                   Login
@@ -54,7 +52,7 @@ class Navbar extends Component {
               </span>
               <span className="parent-span">
                 <Button component={Link} to="/">
-                  <AiOutlineHome size={30}
+                  <TiHome size={30}
                     style={{ paddingRight: 2, color: "#043F66" }}
                   />
                   Home
@@ -62,8 +60,8 @@ class Navbar extends Component {
               </span>
               <span className="parent-span">
                 <Button component={Link} to="/signup">
-                  <AiOutlineUserAdd size={30}
-                    style={{ paddingRight: 2, color: "#043F66" }}
+                  <TiUserAdd size={32.5}
+                    style={{ paddingRight: 2, paddingTop:3, color: "#043F66" }}
                   />
                   Sign Up
                 </Button>

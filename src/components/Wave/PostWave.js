@@ -13,7 +13,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import AddIcon from "@material-ui/icons/Add";
+import {IoIosAddCircle} from "react-icons/io";
 import CloseIcon from "@material-ui/icons/Close";
 const styles = theme => ({
   ...theme.spreadTheme,
@@ -72,7 +72,7 @@ class PostWave extends Component {
     return (
       <Fragment>
         <AppButton onClick={this.handleOpen} tip="Make a Wave">
-          <AddIcon color="secondary" />
+          <IoIosAddCircle style={{color: "#043F66"}} size={32} />
         </AppButton>
         <Dialog
           open={this.state.open}
