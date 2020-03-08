@@ -33,8 +33,7 @@ class login extends Component {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
-  //andrew@email.com
-  //openup
+
   //loading set true while submit handler and axios fetch data
   handleSubmit = event => {
     event.preventDefault();

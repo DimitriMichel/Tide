@@ -8,10 +8,11 @@ import {
   LOADING_USER
 } from "../types";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const setAuthorizationHeader = token => {
   const FBIdToken = `Bearer ${token}`;
-  localStorage.setItem("FBIdToken", FBIdToken);
+  Cookies.set("FBIdToken", FBIdToken, { expires: 1, secure: true });
   axios.defaults.headers.common["Authorization"] = FBIdToken;
 };
 
@@ -56,14 +57,14 @@ export const markNotificationsRead = notificationIds => dispatch => {
     .post("/notifications", notificationIds)
     .then(() => {
       dispatch({
-        type: MARK_NOTIFICATIONS_READ,
+        type: MARK_NOTIFICATIONS_READ
       });
     })
     .catch(err => console.log(err));
 };
 //Unauthenticated Global state on logout
 export const logoutUser = () => dispatch => {
-  localStorage.removeItem("FBIdToken");
+  Cookies.remove("FBIdToken");
   delete axios.defaults.headers.common["Authorization"];
   dispatch({ type: SET_UNAUTHENTICATED });
 };

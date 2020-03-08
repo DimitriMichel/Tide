@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { SET_AUTHENTICATED } from "./redux/types";
 import { logoutUser, getUserData } from "./redux/actions/userActions";
-
+import Cookies from "js-cookie"
 //PAGES
 import home from "./pages/home";
 import login from "./pages/login";
@@ -27,10 +27,11 @@ import AuthRoute from "./util/AuthRoute";
 const theme = createMuiTheme(themeConfig);
 axios.defaults.baseURL =
   "https://us-central1-theory-35917.cloudfunctions.net/api";
-const token = localStorage.FBIdToken;
+const token = Cookies.get("FBIdToken");
 if (token) {
   const decodedToken = jwtDecode(token);
   // Set Token Expiry Window
+  console.log(Cookies.get("FBIdToken"));
   if (decodedToken.exp * 1000 < Date.now()) {
     store.dispatch(logoutUser());
     logoutUser();
