@@ -1,12 +1,9 @@
 import axios from "axios";
 //CURRENTS
-const KEY = "c0b480701a314f00b5207a9eff9753c5";
+//const KEY = "eaf2773476064483b40c45df79edba85";
 
 export default axios.create({
     baseURL: "https://newsapi.org/",
-    headers: {
-        "X-Api-Key": KEY,
-    }
 
 });
 

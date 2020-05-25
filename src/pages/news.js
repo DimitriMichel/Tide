@@ -43,7 +43,8 @@ class news extends Component {
     News.get("/v2/top-headlines", {
       params: {
         country: "us",
-        pageSize: 25
+        pageSize: 25,
+        apiKey: 'eaf2773476064483b40c45df79edba85'
       }
     })
       .then(response => {
