@@ -1,6 +1,6 @@
 import axios from "axios";
 //CURRENTS
-const KEY = "80bb967667c74814a29ca7a9e0562503";
+const KEY = "c0b480701a314f00b5207a9eff9753c5";
 
 export default axios.create({
     baseURL: "https://newsapi.org/",
