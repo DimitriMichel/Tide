@@ -1,11 +1,11 @@
 export const imageLinkContainer = {
-  "Engadget":
+  Engadget:
     "https://pbs.twimg.com/profile_images/655059892022022144/Pq3Q_1oU_400x400.png",
-  "Politico":
+  Politico:
     "https://pbs.twimg.com/profile_images/677177503694237697/y6yTzWn6_400x400.png",
   "Fox News":
     "https://pbs.twimg.com/profile_images/918480715158716419/4X8oCbge_400x400.jpg",
-  "CNN":
+  CNN:
     "https://pbs.twimg.com/profile_images/508960761826131968/LnvhR8ED_400x400.png",
   "Nytimes.com":
     "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_400x400.png",
@@ -13,7 +13,7 @@ export const imageLinkContainer = {
     "https://pbs.twimg.com/profile_images/988382060443250689/DijesdNB_400x400.jpg",
   "Deadline.com":
     "https://pbs.twimg.com/profile_images/1116019573981974528/2El9E56p_400x400.png",
-  "CNBC":
+  CNBC:
     "https://pbs.twimg.com/profile_images/1185182366156894208/pKRddT3o_400x400.png",
   "Variety.com":
     "https://pbs.twimg.com/profile_images/1060236422500704257/jltNN1hQ_400x400.jpg",
@@ -22,6 +22,8 @@ export const imageLinkContainer = {
   "Entertainment Weekly":
     "https://pbs.twimg.com/profile_images/1179528337401581568/rD4Mkr1c_400x400.png",
   "Npr.org":
+    "https://pbs.twimg.com/profile_images/1208165423109292032/_oEEIsvx_400x400.jpg",
+  NPR:
     "https://pbs.twimg.com/profile_images/1208165423109292032/_oEEIsvx_400x400.jpg",
   "Business Insider":
     "https://pbs.twimg.com/profile_images/1199017286780231684/P_hQmsjg_400x400.jpg",
@@ -41,7 +43,7 @@ export const imageLinkContainer = {
     "https://pbs.twimg.com/profile_images/1145717993328001030/UHdt_Nam_400x400.png",
   "Pitchfork.com":
     "https://pbs.twimg.com/profile_images/1137326502624841729/YX-bRuJZ_400x400.jpg",
-  "Reuters":
+  Reuters:
     "https://pbs.twimg.com/profile_images/1194751949821939712/3VBu4_Sa_400x400.jpg",
   "The Washington Post":
     "https://pbs.twimg.com/profile_images/1060271522319925257/fJKwJ0r2_400x400.jpg",
@@ -65,7 +67,7 @@ export const imageLinkContainer = {
     "https://pbs.twimg.com/profile_images/907330975587336193/tw7JPE5v_400x400.jpg",
   "CBS News":
     "https://pbs.twimg.com/profile_images/645966750941626368/d0Q4voGK_400x400.jpg",
-  "TechRadar":
+  TechRadar:
     "https://pbs.twimg.com/profile_images/875421451653873664/P21KAcnr_400x400.jpg",
   "Espn.com":
     "https://pbs.twimg.com/profile_images/1170690523201527808/FriNRiir_400x400.png",
@@ -81,7 +83,7 @@ export const imageLinkContainer = {
     "https://pbs.twimg.com/profile_images/875399204218126339/W3zmmuWz_400x400.jpg",
   "9to5google.com":
     "https://pbs.twimg.com/profile_images/660091855749709824/QptU2fea_400x400.jpg",
-  "Axios":
+  Axios:
     "https://pbs.twimg.com/profile_images/1184549937247330304/mRBhigcY_400x400.jpg",
   "Yahoo.com":
     "https://pbs.twimg.com/profile_images/1176104565797769218/IVKrGKC2_400x400.png",
@@ -101,41 +103,49 @@ export const imageLinkContainer = {
     "https://pbs.twimg.com/profile_images/1106672424605630465/IC9ipKIt_400x400.png",
   "Huffpost.com":
     "https://pbs.twimg.com/profile_images/1191109446052859904/O_BYtHn8_400x400.jpg",
-  "Polygon":
-      "https://pbs.twimg.com/profile_images/877267279523741696/rzCAYZLP_400x400.jpg",
+  Polygon:
+    "https://pbs.twimg.com/profile_images/877267279523741696/rzCAYZLP_400x400.jpg",
   "Msn.com":
-      "https://pbs.twimg.com/profile_images/509007133283598338/-T4ohr0o_400x400.png",
+    "https://pbs.twimg.com/profile_images/509007133283598338/-T4ohr0o_400x400.png",
   "Macrumors.com":
-      "https://pbs.twimg.com/profile_images/1171574992821194752/rVrN8JVA_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1171574992821194752/rVrN8JVA_400x400.jpg",
   "Financial Times":
-      "https://pbs.twimg.com/profile_images/931161479398686721/FI3te2Sw_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/931161479398686721/FI3te2Sw_400x400.jpg",
   "Latimes.com":
-      "https://pbs.twimg.com/profile_images/1171581672074043393/XNqsW9EE_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1171581672074043393/XNqsW9EE_400x400.jpg",
   "Investors.com":
-      "https://pbs.twimg.com/profile_images/929121870107918336/gO-6qGSu_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/929121870107918336/gO-6qGSu_400x400.jpg",
   "Cheatsheet.com":
-      "https://pbs.twimg.com/profile_images/1130892025124016129/TdyMzxsQ_400x400.png",
+    "https://pbs.twimg.com/profile_images/1130892025124016129/TdyMzxsQ_400x400.png",
   "Androidauthority.com":
-      "https://pbs.twimg.com/profile_images/831334194525528064/2NlMZ5ln_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/831334194525528064/2NlMZ5ln_400x400.jpg",
   "Dailymail.co.uk":
-      "https://pbs.twimg.com/profile_images/1194268540058193927/ca-uOgq6_400x400.png",
+    "https://pbs.twimg.com/profile_images/1194268540058193927/ca-uOgq6_400x400.png",
   "Cbs42.com":
-      "https://pbs.twimg.com/profile_images/1219674270118354944/n6dQfgkZ_400x400.jpg",
-  "Newsweek":
-      "https://pbs.twimg.com/profile_images/741603495929905152/di0NxkFa_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1219674270118354944/n6dQfgkZ_400x400.jpg",
+  Newsweek:
+    "https://pbs.twimg.com/profile_images/741603495929905152/di0NxkFa_400x400.jpg",
   "Nbcsports.com":
-      "https://pbs.twimg.com/profile_images/1212454551061549056/NUfsmwZX_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1212454551061549056/NUfsmwZX_400x400.jpg",
   "Tmz.com":
-      "https://pbs.twimg.com/profile_images/948698715220410368/EkNILtvi_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/948698715220410368/EkNILtvi_400x400.jpg",
   "Pagesix.com":
-      "https://pbs.twimg.com/profile_images/966373011875090439/4InOFhcn_400x400.jpg",
-  "MSNBC":
-      "https://pbs.twimg.com/profile_images/988382060443250689/DijesdNB_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/966373011875090439/4InOFhcn_400x400.jpg",
+  MSNBC:
+    "https://pbs.twimg.com/profile_images/988382060443250689/DijesdNB_400x400.jpg",
   "Washingtonexaminer.com":
-      "https://pbs.twimg.com/profile_images/1049003685639081986/zX2rN7zN_400x400.jpg",
+    "https://pbs.twimg.com/profile_images/1049003685639081986/zX2rN7zN_400x400.jpg",
+  "Yahoo Entertainment": "https://imgur.com/h2My5gf",
   "247sports.com":
-      "https://pbs.twimg.com/profile_images/728641966850879488/GWbvB3Zf_400x400.jpg"
-
-
+    "https://pbs.twimg.com/profile_images/728641966850879488/GWbvB3Zf_400x400.jpg",
+  AppleInsider: "https://imgur.com/HnKCuHm",
+  VentureBeat: "https://imgur.com/pTzVtGN",
+  ScienceAlert: "https://imgur.com/E2LpEnM",
+  "Space.com": "https://imgur.com/ZCWms5I",
+  Vulture: "https://imgur.com/XPiJffV",
+  "The Guardian": "https://imgur.com/A3PkLed",
+  CNET: "https://imgur.com/brJsZlt",
+  HuffPost: "https://imgur.com/FHBDv0D",
+  "Slate Magazine": "https://imgur.com/pV7Anf5",
 };
 export default imageLinkContainer;
