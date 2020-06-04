@@ -31,7 +31,6 @@ const token = Cookies.get("FBIdToken");
 if (token) {
   const decodedToken = jwtDecode(token);
   // Set Token Expiry Window
-  console.log(Cookies.get("FBIdToken"));
   if (decodedToken.exp * 1000 < Date.now()) {
     store.dispatch(logoutUser());
     logoutUser();
