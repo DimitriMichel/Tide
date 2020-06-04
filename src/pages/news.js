@@ -14,29 +14,29 @@ import Grid from "@material-ui/core/Grid";
 const styles = {
   card: {
     display: "flex",
-    marginBottom: 20
+    marginBottom: 20,
   },
   image: {},
   content: {
     padding: 10,
-    objectFit: "cover"
+    objectFit: "cover",
   },
   avatar: {
     width: 40,
-    height: 40
+    height: 40,
   },
   details: {
     CardContent: {
       padding: 0,
       "&:last-child": {
-        paddingBottom: 0
-      }
-    }
-  }
+        paddingBottom: 0,
+      },
+    },
+  },
 };
 class news extends Component {
   state = {
-    articlesList: []
+    articlesList: [],
   };
   //US News Top Headlines
   componentDidMount() {
@@ -44,20 +44,16 @@ class news extends Component {
       params: {
         country: "us",
         pageSize: 25,
-        apiKey: "eaf2773476064483b40c45df79edba85"
-      }
+        apiKey: "eaf2773476064483b40c45df79edba85",
+      },
     })
-      .then(response => {
+      .then((response) => {
         this.setState({ articlesList: response.data.articles });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err.message, err.code, err));
   }
 
   render() {
-
-
-
-
     const { classes } = this.props;
     return (
       <div className="container">
@@ -75,10 +71,10 @@ class news extends Component {
                 borderStyle: "solid",
                 borderWidth: "2px",
                 borderColor: "#E6ECF0",
-                borderRadius: "4px"
+                borderRadius: "4px",
               }}
             >
-              {this.state.articlesList.map(article => {
+              {this.state.articlesList.map((article) => {
                 //Remove "-" and following characters in article titles.
                 //ex.(The world is ending - CNN) -> (The world is ending).
                 const articleTitle = article.title.substring(
