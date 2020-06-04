@@ -44,6 +44,7 @@ class news extends Component {
       params: {
         country: "us",
         pageSize: 25,
+        apiKey: "eaf2773476064483b40c45df79edba85"
       }
     })
       .then(response => {
