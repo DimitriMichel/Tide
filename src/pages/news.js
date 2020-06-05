@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import News from "../API/News";
 import Profile from "../components/Profile/Profile";
 import imageLinkContainer from "../util/NewsImageLinks";
+import { KEY } from "../API/News";
+import ReactImageFallback from "react-image-fallback";
+import FallbackImage from "../images/newsfallback.jpg";
 //MUI
 import Avatar from "@material-ui/core/Avatar";
 import CardContent from "@material-ui/core/CardContent";
@@ -34,17 +37,21 @@ const styles = {
     },
   },
 };
+
 class news extends Component {
   state = {
     articlesList: [],
   };
+
   //US News Top Headlines
   componentDidMount() {
-    News.get("/v2/top-headlines", {
+    News.get("/v3/search", {
       params: {
-        country: "us",
-        pageSize: 25,
+        q: "tech, politics",
+        max: 25,
         apiKey: "eaf2773476064483b40c45df79edba85",
+        token: KEY,
+        image: "required",
       },
     })
       .then((response) => {
@@ -77,10 +84,10 @@ class news extends Component {
               {this.state.articlesList.map((article) => {
                 //Remove "-" and following characters in article titles.
                 //ex.(The world is ending - CNN) -> (The world is ending).
-                const articleTitle = article.title.substring(
+                /*const articleTitle = article.title.substring(
                   0,
                   article.title.lastIndexOf("-")
-                );
+                );*/
                 let datePosted = new Date(article.publishedAt).toLocaleString(
                   "en-US"
                 );
@@ -89,9 +96,7 @@ class news extends Component {
                 let newsLogo;
                 if (imageLinkContainer[article.source.name]) {
                   newsLogo = imageLinkContainer[article.source.name];
-                } else
-                  newsLogo =
-                    "https://cdn1.vectorstock.com/i/thumb-large/39/10/world-news-flat-icon-news-symbol-logo-vector-20093910.jpg";
+                } else newsLogo = "https://imgur.com/GyaCKLX";
 
                 return (
                   <div>
@@ -136,13 +141,14 @@ class news extends Component {
 
                             <div className="news-image">
                               <div className="news-image-link">
-                                <img
+                                <ReactImageFallback
                                   className="news-article-image"
-                                  src={article.urlToImage}
+                                  src={article.image}
                                   alt="Article"
+                                  fallbackImage={FallbackImage}
                                 />
                                 <div className="news-title-link">
-                                  <a href={article.url}>{articleTitle}</a>
+                                  <a href={article.url}>{article.title}</a>
                                 </div>
                               </div>
                             </div>

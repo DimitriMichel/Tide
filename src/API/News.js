@@ -1,9 +1,9 @@
 import axios from "axios";
 //CURRENTS
-let KEY = "eaf2773476064483b40c45df79edba85";
+export const KEY = "26600fd9d21c3c15b3c846bb88c1137d";
 
 export default axios.create({
-  baseURL: "https://newsapi.org/",
+  baseURL: "https://gnews.io/api/v3/search?",
 });
 
 //bg color edf3f6
