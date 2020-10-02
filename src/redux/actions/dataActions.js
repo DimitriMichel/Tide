@@ -14,7 +14,7 @@ import {
 } from "../types";
 import axios from "axios";
 
-// Get all waves
+
 export const getWaves = () => dispatch => {
   dispatch({ type: LOADING_DATA });
   axios
@@ -45,7 +45,7 @@ export const getWave = waveID => dispatch => {
     })
     .catch(err => console.log(err));
 };
-// Post a scream
+
 export const postWave = newWave => dispatch => {
   dispatch({ type: LOADING_UI });
   axios
@@ -64,7 +64,7 @@ export const postWave = newWave => dispatch => {
       });
     });
 };
-// Like a scream
+
 export const likeWave = waveID => dispatch => {
   axios
     .get(`/wave/${waveID}/like`)
@@ -76,7 +76,7 @@ export const likeWave = waveID => dispatch => {
     })
     .catch(err => console.log(err));
 };
-// Unlike a scream
+
 export const unlikeWave = waveID => dispatch => {
   axios
     .get(`/wave/${waveID}/unlike`)
@@ -88,7 +88,7 @@ export const unlikeWave = waveID => dispatch => {
     })
     .catch(err => console.log(err));
 };
-// Submit a comment
+
 export const submitComment = (waveID, commentData) => dispatch => {
   axios
     .post(`/wave/${waveID}/comment`, commentData)
