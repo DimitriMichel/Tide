@@ -14,7 +14,7 @@ import {
 } from "../types";
 import axios from "axios";
 
-
+//get all waves
 export const getWaves = () => dispatch => {
   dispatch({ type: LOADING_DATA });
   axios
